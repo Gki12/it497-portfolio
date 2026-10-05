@@ -15,7 +15,7 @@
 :root{
   --bg:#f3f5f4; --surface:#ffffff; --ink:#18232b; --muted:#56646d; --line:#d5dcdc;
   --accent:#1f5f74;
-  --strand1:#1f6f7a; --strand2:#a5671b; --strand3:#7a3f6c;
+  --strand1:#1f6f7a; --strand2:#8a5410; --strand3:#7a3f6c;
   --tint1:#e1efef; --tint2:#f5ead9; --tint3:#efe2ec;
   --todo-bg:#fff4c2; --todo-ink:#5a4600;
   --ok:#2e7d4f; --warn:#a55a12;
@@ -120,30 +120,80 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
 .resume-grid > div:nth-child(odd){font-family:var(--f-display); font-size:18px}
 @media (max-width:560px){.resume-grid{grid-template-columns:1fr}}
 .resume-grid ul{margin:0; padding-left:20px}
+
+/* ---- Week 5 usability enhancements ---- */
+.skip{position:absolute; left:12px; top:-60px; z-index:20; background:var(--accent); color:var(--bg); padding:10px 14px; border-radius:4px; font-weight:700; text-decoration:none}
+.skip:focus{top:10px}
+nav.bar a{display:inline-flex; align-items:center; min-height:44px; padding-inline:2px; border-bottom:3px solid transparent}
+nav.bar ul{padding-block:0}
+nav.bar a[aria-current="true"]{color:var(--ink); border-bottom-color:var(--accent)}
+@media (max-width:1000px){nav.bar ul{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 44px),transparent); mask-image:linear-gradient(to right,#000 calc(100% - 44px),transparent); padding-right:44px}}
+.tbl:focus-visible, pre:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+.to-top{position:fixed; right:16px; bottom:16px; z-index:6; min-height:44px; padding:0 16px; border-radius:22px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:600 14.5px var(--f-body); cursor:pointer; box-shadow:0 2px 8px rgb(0 0 0 / .12); opacity:0; visibility:hidden; transition:opacity .2s}
+.to-top.show{opacity:1; visibility:visible}
+@media (prefers-reduced-motion: reduce){.to-top{transition:none}}
+.cards{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:22px}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.card{display:block; padding:16px 18px; background:var(--t); border-top:5px solid var(--c); border-radius:2px; color:var(--ink); text-decoration:none; min-height:44px}
+.card:hover b{text-decoration:underline}
+.card b{display:block; font-family:var(--f-display); font-weight:400; font-size:20px; line-height:1.25; margin:2px 0 4px}
+.card span:last-child{font-size:15px; color:var(--muted)}
+.card-k{display:block; font-size:12.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--muted)}
+section.week5{background:var(--surface)}
+.video-embed{position:relative; aspect-ratio:16/9; margin:18px 0; background:#000; border-radius:4px; overflow:hidden}
+.video-embed iframe, .video-embed button{position:absolute; inset:0; width:100%; height:100%; border:0}
+.video-embed button{padding:0; cursor:pointer; background:#000}
+.video-embed img{width:100%; height:100%; object-fit:cover; opacity:.85; display:block}
+.video-embed .play{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:rgb(0 0 0 / .72); color:#fff; font:700 16px var(--f-body); padding:12px 20px; border-radius:30px; white-space:nowrap}
+.video-embed button:hover .play, .video-embed button:focus-visible .play{background:var(--accent); color:var(--bg)}
+.map{margin:10px 0 0; padding:0}
+.map-center{max-width:440px; margin:0 auto; text-align:center; padding:16px 18px; border:2px solid var(--ink); border-radius:6px; background:var(--surface)}
+.map-center b, .map-strand > b, .map-loop b{display:block; font-family:var(--f-display); font-weight:400; font-size:21px; line-height:1.25; margin:2px 0 4px}
+.map-center span:last-child, .map-loop span:last-child{font-size:15px; color:var(--muted)}
+.map-strands{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:28px; position:relative}
+.map-strands::before{content:""; position:absolute; left:16.6%; right:16.6%; top:-28px; height:14px; border:2px solid var(--line); border-bottom:0}
+.map-strands::after{content:""; position:absolute; left:50%; top:-28px; width:0; height:0}
+.map-strand{padding:14px 16px; background:var(--t); border-top:5px solid var(--c); border-radius:2px}
+.map-strand ul{margin:6px 0 0; padding-left:18px; font-size:15.5px}
+.map-strand li{margin-bottom:6px}
+.map-loop{display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:10px; align-items:stretch; margin-top:16px}
+.map-loop > div:not(.map-arrow){padding:14px 16px; border:1px solid var(--line); border-radius:4px; background:var(--surface)}
+.map-warn{border-left:5px solid var(--warn) !important}
+.map-realign{border-left:5px solid var(--accent) !important}
+.map-order{border-left:5px solid var(--ok) !important}
+.map-arrow{align-self:center; font-size:26px; color:var(--muted)}
+.map figcaption{font-size:15px; color:var(--muted); margin-top:14px; max-width:68ch}
+@media (max-width:760px){
+  .map-strands{grid-template-columns:1fr} .map-strands::before{display:none}
+  .map-loop{grid-template-columns:1fr} .map-arrow{transform:rotate(90deg); justify-self:center; line-height:1}
+}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 
 <nav class="bar" aria-label="Sections">
   <ul>
     <li><a href="#home">Home</a></li>
+    <li><a href="#week5">Week 5</a></li>
     <li><a href="#video">Video</a></li>
-    <li><a href="#faith">Faith and Learning</a></li>
+    <li><a href="#faith">Faith</a></li>
     <li><a href="#alignment">Alignment</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#ethics">Ethics</a></li>
-    <li><a href="#refinement">IT Project Report</a></li>
+    <li><a href="#refinement">IT Report</a></li>
     <li><a href="#peer">Peer Review</a></li>
     <li><a href="#resume">Résumé</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
 
+<main id="main" tabindex="-1">
 <!-- ============================================================ HOME -->
 <header class="hero" id="home">
   <div class="wrap">
-    <div class="eyebrow">IT 497 Capstone · Week 4 · Expansion, Deepening, and Project Integration</div>
+    <div class="eyebrow">IT 497 Capstone · Week 5 · Integration, Reflection, and Design Enhancement</div>
     <h1>Gaston Kasongo</h1>
     <p class="lede">I'm a network and systems administrator. My work is to keep people's systems and information dependable, and I try to do it as a disciple of Jesus Christ who treats every account, password, and backup as a stewardship.</p>
     <svg class="rope" viewBox="0 0 760 44" preserveAspectRatio="none" aria-hidden="true">
@@ -151,6 +201,7 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
       <path d="M0 22 C 60 40, 120 4, 190 22 S 320 40, 380 22 S 510 4, 570 22 S 700 40, 760 22" style="stroke:var(--strand2)"/>
       <path d="M0 14 C 90 30, 140 14, 190 30 S 300 14, 380 14 S 480 30, 570 30 S 690 14, 760 14" style="stroke:var(--strand3); opacity:.85"/>
     </svg>
+    <p><a href="#week5"><b>New in Week 5:</b> review and reflection, usability report, ethics reflection, and mental map →</a></p>
     <p>Elder David A. Bednar (2018) compares a rope to many separate strands twisted together until they become stronger as one. This portfolio follows that idea. Three guiding principles run through every section, and each is coloured the same way wherever it shows up. You can trace each one from scripture, to a decision in my work, to the evidence that I acted on it.</p>
     <div class="strands">
       <div class="strand s1"><b>Faith that acts</b><span>Agency and initiative: being "anxiously engaged" without waiting to be told (D&amp;C 58:26–28).</span></div>
@@ -158,18 +209,344 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
       <div class="strand s3"><b>Charity through service</b><span>Technology that serves the person who depends on it (Mosiah 2:17).</span></div>
     </div>
     <div class="meta-row">
-      <span>Instructor: Luman Hohaia</span><span>Submitted October 2026</span>
+      <span>Instructor: Luman Hohaia</span><span>Updated October 2026 (Week 5)</span>
       <span>Focus: Networks and System Administration</span>
     </div>
   </div>
 </header>
 
+<!-- ============================================================ WEEK 5 HUB -->
+<section id="week5" class="week5">
+  <div class="wrap">
+    <div class="eyebrow">Week 5 · Integration, Reflection, and Design Enhancement</div>
+    <h2>What's new this week</h2>
+    <p>The Savior said, "In your patience possess ye your souls" (Luke 21:19). This week I slowed down. I reviewed the whole portfolio, tested it the way a visitor would, fixed what got in the way, and thought about how my faith and my work fit together. The four new pieces are below. They also guide how I'll finish the portfolio.</p>
+    <div class="cards">
+      <a class="card s1" href="#review"><span class="card-k">Task 1</span><b>Review and reflection</b><span>Christlike attributes, my warning sign, and the plan for finishing the portfolio</span></a>
+      <a class="card s2" href="#usability"><span class="card-k">Task 2</span><b>Usability report</b><span>How I tested the site, what I found, and what I changed</span></a>
+      <a class="card s2" href="#ethics-reflection"><span class="card-k">Task 2</span><b>Ethical dilemma reflection</b><span>My view on Equifax and how I'll handle similar situations</span></a>
+      <a class="card s3" href="#mental-map"><span class="card-k">Task 3</span><b>Mental map</b><span>How Christ's teachings connect to my professional practices</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TASK 1 REVIEW -->
+<section id="review">
+  <div class="wrap">
+    <div class="eyebrow">Week 5 · Task 1 · Spiritual Progression Portfolio Enhancement</div>
+    <h2>Review and reflection: Christlike attributes and warning signs</h2>
+    <p>This review has two jobs. It records how Christlike attributes are showing up in my life and in this portfolio, and it names the warning sign I most need to watch. It's also the guide I'll use to finish the portfolio, so it ends with a plan.</p>
+
+    <h3>1. Christlike attributes in my life and my portfolio</h3>
+    <p><i>Preach My Gospel</i> (2023) describes Christlike attributes as gifts from God that grow as we use our agency well, and not as personality traits we either have or don't. That helped me. I looked for evidence of each attribute instead of rating myself on how I feel about it.</p>
+    <div class="tbl" tabindex="0" role="region" aria-label="Christlike attributes in my life and my portfolio table">
+      <table>
+        <thead><tr><th>Attribute</th><th>Where I see it in my life</th><th>Where it shows in the portfolio</th><th>Where I still need to grow</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag s1">Faith</span></td><td>Acting before I feel certain. I take the next right step and trust the Lord with the rest.</td><td>Faith that acts strand; video reflection on D&amp;C 58:26–28</td><td>Acting in faith also means asking for help, not only working harder on my own.</td></tr>
+          <tr><td><span class="tag s1">Diligence</span></td><td>Keeping my ten-minute scripture study before my school work, five days a week.</td><td>13 automated tests; every project follows the same structure</td><td>Being diligent about rest and family time too, not only output.</td></tr>
+          <tr><td><span class="tag s2">Honesty and virtue</span></td><td>Reporting what failed as clearly as what worked.</td><td>Honest status labels; safebackup only reports success after it verifies</td><td>Saying "I don't know yet" sooner when I'm stuck.</td></tr>
+          <tr><td><span class="tag s2">Humility</span></td><td>Owning the weakness in my first backup script (Ether 12:27).</td><td>v1 kept in the repository as a baseline; known limitations published</td><td>Letting other people see my work while it's still unfinished.</td></tr>
+          <tr><td><span class="tag s2">Patience</span></td><td>Improving things step by step instead of expecting perfection at once (Luke 21:19).</td><td>This week's design changes were made in small steps and re-tested each time</td><td>Being patient with others who learn technology more slowly than I do.</td></tr>
+          <tr><td><span class="tag s3">Charity</span></td><td>Seeing the person behind every system I support (Mosiah 2:17).</td><td>Plain-language error messages; the accessibility fixes in this week's report</td><td>Giving my time to others, such as finishing the peer review once a teammate is assigned.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2. My warning sign: working alone too long</h3>
+    <p>When I reviewed the portfolio, one pattern stood out. Almost everything in it, I built alone. In Week 2 I planned to ask someone to try each project, and in Week 4 I wrote that my "next step" was to ask a family member to test safebackup. I still haven't done it. The peer review section is waiting for a teammate, and until this week the only person who had tested the website was me.</p>
+    <p>Working alone feels efficient, and some of it comes from good things: taking ownership, and not wanting to burden other people. But when I hold on too long, three things happen. I miss problems that another person would have seen in minutes. Small problems grow before anyone knows about them. And slowly I start relying only on my own understanding, which Proverbs 3:5–6 warns against.</p>
+    <p>President Kusch (Kusch &amp; Kusch, 2024) taught that real understanding comes from more than one source. It combines knowledge, experience, and wisdom with the help of the Holy Ghost, and it depends on study and prayer together. He also cautioned us to be careful about the sources we rely on. When I work alone too long, I've made myself my only source. Sister Kusch's counsel was simple: if you lack something, ask the Lord for it. Asking is part of faith, not a sign that it's weak.</p>
+    <h4>Early signals I now watch for</h4>
+    <ul>
+      <li>I've been stuck on a problem for more than two hours and haven't told anyone.</li>
+      <li>I catch myself thinking, "I'll show it to someone when it's finished."</li>
+      <li>My prayers turn into reports of what I did, instead of requests for help and direction.</li>
+      <li>I skip my ten minutes of scripture study because "there's too much to do."</li>
+      <li>I feel a little defensive when someone offers help or points out a problem.</li>
+    </ul>
+    <h4>Strategies for realignment</h4>
+    <div class="tbl" tabindex="0" role="region" aria-label="Strategies for realignment table">
+      <table>
+        <thead><tr><th>Strategy</th><th>What I'll do</th><th>Why it helps</th></tr></thead>
+        <tbody>
+          <tr><td><b>The two-hour rule</b></td><td>If I'm stuck for two hours, I ask someone: a classmate, my instructor, or a technical forum.</td><td>It turns asking for help into a habit I don't have to decide on each time.</td></tr>
+          <tr><td><b>Show it unfinished</b></td><td>Each week I'll show one piece of unfinished work to another person. I'll start with the three usability tests in this report.</td><td>Feedback is cheapest early. It also practises the humility I listed above.</td></tr>
+          <tr><td><b>Ask in prayer specifically</b></td><td>Before I start a hard task, I'll pray about that task by name and ask what I'm missing.</td><td>It keeps the Lord as my first source, as Sister Kusch taught.</td></tr>
+          <tr><td><b>Record what I learn</b></td><td>I'll keep a short weekly note of what I learned and who helped me.</td><td>It shows me how much of my growth comes through other people.</td></tr>
+          <tr><td><b>Disagree without contention</b></td><td>When feedback stings, I'll first restate the other person's point, then respond.</td><td>Differences make work better when they don't become contention (3 Nephi 11:29; Ensign College, n.d.).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3. Portfolio review: cohesion and feedback</h3>
+    <p>I read the portfolio from top to bottom as a visitor would, then checked each part against my three strands and against this week's test results. Here's where each part stands.</p>
+    <div class="tbl" tabindex="0" role="region" aria-label="Portfolio review: cohesion and feedback table">
+      <table>
+        <thead><tr><th>Component</th><th>Status</th><th>What I found</th><th>Action to finish</th></tr></thead>
+        <tbody>
+          <tr><td><b>Home and the three strands</b></td><td><span class="status st-done">Strong</span></td><td>The rope idea ties the whole site together. The page still said "Week 4."</td><td>Updated to Week 5. Keep the strands as the organising idea.</td></tr>
+          <tr><td><b>Video reflection</b></td><td><span class="status st-done">Improved</span></td><td>It was only a link, so visitors had to leave the page.</td><td>Now embedded. Still to do: check that the captions are accurate.</td></tr>
+          <tr><td><b>Faith and learning</b></td><td><span class="status st-done">Strong</span></td><td>Clear entries, with Week 2 follow-ups. The amber strand colour didn't have enough contrast.</td><td>Fixed the colour. Add one Week 5 follow-up entry after the participant tests.</td></tr>
+          <tr><td><b>Alignment table</b></td><td><span class="status st-done">Strong</span></td><td>On phones it could only be scrolled sideways by touch.</td><td>Fixed: it can now be scrolled with the keyboard too.</td></tr>
+          <tr><td><b>Projects</b></td><td><span class="status st-prog">In progress</span></td><td>The home lab is still at the planning stage.</td><td>Build the lab and add evidence before the final submission.</td></tr>
+          <tr><td><b>Ethics (Week 4) and reflection (Week 5)</b></td><td><span class="status st-done">Strong</span></td><td>The analysis and the personal reflection now work together.</td><td>None for now.</td></tr>
+          <tr><td><b>IT project report</b></td><td><span class="status st-done">Strong</span></td><td>The full source code makes the page very long.</td><td>Move the full code to GitHub and keep only key excerpts here.</td></tr>
+          <tr><td><b>Peer review</b></td><td><span class="status st-prog">Waiting</span></td><td>No teammate has been assigned yet, so the section is a framework only.</td><td>Ask my instructor about an assignment. Complete the review as soon as I have one.</td></tr>
+          <tr><td><b>Résumé and references</b></td><td><span class="status st-done">Strong</span></td><td>The references follow APA 7.</td><td>Add this week's sources (done) and proofread once more.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="todo-block"><b>Instructor feedback:</b> Add any comments from my Week 4 grade here, along with the change I made for each one.</p>
+
+    <h3>4. Plan for finishing the portfolio</h3>
+    <ol>
+      <li><b>Run the three participant tests</b> using the script in the usability report, then fix the top problem they find.</li>
+      <li><b>Complete the peer review</b> as soon as a teammate is assigned. Ask my instructor this week.</li>
+      <li><b>Build the home lab</b> and add an inventory, a patch log, and screenshots as evidence.</li>
+      <li><b>Shorten the long sections:</b> link to the full source code on GitHub instead of showing all of it here.</li>
+      <li><b>Check the video captions</b> on YouTube and correct any errors.</li>
+      <li><b>Do a final read-through</b> for APA 7 formatting, broken links, and honest status labels.</li>
+    </ol>
+    <p>Each step also guards against my warning sign. Steps 1 and 2 can't be done alone.</p>
+  </div>
+</section>
+
+<!-- ============================================================ TASK 2 USABILITY -->
+<section id="usability">
+  <div class="wrap">
+    <div class="eyebrow">Week 5 · Task 2 · Professional Growth Portfolio: Design and Usability</div>
+    <h2>Usability testing and design enhancement report</h2>
+    <p>My portfolio is meant to show employers and my instructor how I work, and it should work for everyone who visits it. That includes people on a phone, people who use a keyboard or a screen reader, and people who prefer dark mode. Treating a visitor's time and access as worth protecting is the same stewardship I try to build into my software.</p>
+
+    <h3>1. Testing questions</h3>
+    <ol>
+      <li>Can a visitor find any section quickly, on both a computer and a phone?</li>
+      <li>Does the site meet WCAG 2.2 level AA (World Wide Web Consortium [W3C], 2023) for contrast, keyboard use, and structure?</li>
+      <li>Does the design support the content, or does it get in the way?</li>
+    </ol>
+
+    <h3>2. Methods</h3>
+    <div class="tbl" tabindex="0" role="region" aria-label="Methods table">
+      <table>
+        <thead><tr><th>Method</th><th>How I did it</th><th>What it can and can't show</th></tr></thead>
+        <tbody>
+          <tr><td><b>Automated accessibility scan</b></td><td>axe-core 4.14 (Deque Systems, 2025) run in a Chromium browser through Playwright, checking the WCAG 2.0, 2.1, and 2.2 A/AA rules plus best practices. I ran it in three conditions: laptop (1366 × 800), phone (375 × 740), and dark mode.</td><td>It finds coded problems reliably, such as contrast, landmarks, and keyboard access. It can't judge whether the content makes sense.</td></tr>
+          <tr><td><b>Keyboard-only walkthrough</b></td><td>I moved through the page with Tab, Shift+Tab, and Enter only, watching where the focus went.</td><td>It shows whether someone who can't use a mouse can reach everything.</td></tr>
+          <tr><td><b>Heuristic review</b></td><td>I checked the site against Nielsen's 10 usability heuristics (Nielsen, 2024) at each screen size.</td><td>It finds design problems quickly. It's still only my opinion, though, so I added real users below.</td></tr>
+          <tr><td><b>Task-based tests with people</b></td><td>Three participants, five tasks each, thinking aloud. See the script in section 6.</td><td>It shows real behaviour and confusion I can't predict myself.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3. What I found</h3>
+    <p>Severity: <b>High</b> blocks some visitors. <b>Medium</b> slows them down or confuses them. <b>Low</b> is polish.</p>
+    <div class="tbl" tabindex="0" role="region" aria-label="What I found table">
+      <table>
+        <thead><tr><th class="num">#</th><th>Issue</th><th>Evidence</th><th>Severity</th><th>Standard</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>On a phone, 6 of the 10 navigation links were off screen, with nothing to show the bar could scroll.</td><td>Measured at 375 px: only 4 of 10 links fully visible.</td><td>High</td><td>Heuristic 6, recognition rather than recall</td></tr>
+          <tr><td class="num">2</td><td>The amber strand colour had too little contrast on the light background (3.87:1 for tags, 4.2:1 for headings).</td><td>axe: 11 elements failed colour contrast.</td><td>High</td><td>WCAG 1.4.3 Contrast (Minimum)</td></tr>
+          <tr><td class="num">3</td><td>Tables and code blocks that scroll sideways couldn't be scrolled with the keyboard.</td><td>axe: 10 scrollable regions with no keyboard access on the phone.</td><td>High</td><td>WCAG 2.1.1 Keyboard</td></tr>
+          <tr><td class="num">4</td><td>No skip link and no <code>main</code> landmark, so screen-reader and keyboard users had to pass 10 links every time.</td><td>axe: "landmark-one-main", and 50 elements outside any landmark.</td><td>Medium</td><td>WCAG 2.4.1 Bypass Blocks</td></tr>
+          <tr><td class="num">5</td><td>The navigation links were small tap targets (17 px tall).</td><td>Measured on all 10 links.</td><td>Medium</td><td>WCAG 2.5.8 Target Size (Minimum)</td></tr>
+          <tr><td class="num">6</td><td>On a very long page (over 33,000 px on a phone), there was no sign of which section you were in and no quick way back to the top.</td><td>Measured page height; heuristic review.</td><td>Medium</td><td>Heuristic 1, visibility of system status</td></tr>
+          <tr><td class="num">7</td><td>The video was only a link. There was no image or media on the page at all.</td><td>No embedded media found.</td><td>Medium</td><td>Heuristic 8, aesthetic and minimalist design</td></tr>
+          <tr><td class="num">8</td><td>The page still said "Week 4," and the task labels from different weeks looked alike.</td><td>Heuristic review.</td><td>Low</td><td>Heuristic 4, consistency and standards</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4. Enhancements I made</h3>
+    <h4>Navigation</h4>
+    <ul>
+      <li>Added a <b>"Skip to content" link</b> as the first thing on the page, and wrapped the content in a <code>main</code> landmark (issue 4).</li>
+      <li>The section bar now <b>highlights the section you're reading</b> and scrolls that link into view. On phones, a fade at the edge shows there are more links (issues 1 and 6).</li>
+      <li>Made every navigation link at least <b>44 px tall</b> so it's easier to tap (issue 5).</li>
+      <li>Added a <b>"Back to top"</b> button that appears after you scroll down (issue 6).</li>
+      <li>Added a <b>Week 5 overview</b> with cards that link to each new piece, and labelled older sections with their week (issue 8).</li>
+    </ul>
+    <h4>Multimedia</h4>
+    <ul>
+      <li>The <b>video reflection is now embedded</b>. To keep the page fast and private, the YouTube player only loads when you click Play, and it uses YouTube's privacy-enhanced mode (issue 7).</li>
+      <li>The <b>mental map</b> in Task 3 is a visual diagram built from real text, so it adapts to small screens and screen readers can read it.</li>
+    </ul>
+    <h4>Accessibility and device responsiveness</h4>
+    <ul>
+      <li>Darkened the amber strand colour in light mode so all text passes 4.5:1 contrast (issue 2).</li>
+      <li>Every table and code block that scrolls can now receive keyboard focus, with a visible outline and a label (issue 3).</li>
+      <li>The new content uses grids that become one column on phones. I checked every section at 375 px for sideways scrolling.</li>
+      <li>Smooth scrolling and animations turn off for visitors who choose "reduce motion" in their system settings.</li>
+    </ul>
+
+    <h3>5. Impact: before and after</h3>
+    <div class="tbl" tabindex="0" role="region" aria-label="Impact: before and after table">
+      <table>
+        <thead><tr><th>Measure</th><th class="num">Before (Week 4)</th><th class="num">After (Week 5)</th></tr></thead>
+        <tbody>
+          <tr><td>axe-core rule violations (phone)</td><td class="num">4 rules · 72 elements</td><td class="num" id="after-axe">0</td></tr>
+          <tr><td>Elements failing colour contrast</td><td class="num">11</td><td class="num">0</td></tr>
+          <tr><td>Scrollable regions without keyboard access (phone)</td><td class="num">10</td><td class="num">0</td></tr>
+          <tr><td>Skip link and main landmark</td><td class="num">No</td><td class="num">Yes</td></tr>
+          <tr><td>Navigation link height</td><td class="num">17 px</td><td class="num">44 px</td></tr>
+          <tr><td>Shows the current section</td><td class="num">No</td><td class="num">Yes</td></tr>
+          <tr><td>Embedded media</td><td class="num">0</td><td class="num">2 (video, mental map)</td></tr>
+          <tr><td>Sideways page scrolling at 375 px</td><td class="num">None</td><td class="num">None</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The biggest gains are for the visitors I couldn't see before: someone on a phone who couldn't find the Ethics link, or someone using a keyboard who couldn't scroll a table. An automated score of zero doesn't mean the site is perfect, though. It only means the problems a machine can detect are fixed. The tests with people will show what's left.</p>
+
+    <h3>6. Tests with people</h3>
+    <details>
+      <summary>View the test script (about 15 minutes per person)</summary>
+      <p><b>Participants:</b> three people. At least one uses a phone, and at least one isn't in IT.</p>
+      <p><b>Introduction:</b> "I'm testing the website, not you. Please think aloud as you go. There are no wrong answers."</p>
+      <ol>
+        <li>"What do you think this website is about?" (first impression, about 10 seconds)</li>
+        <li>"Find where I talk about the Equifax breach."</li>
+        <li>"Play my video reflection."</li>
+        <li>"Find one project that's still in progress. How did you know?"</li>
+        <li>"Find my work experience."</li>
+      </ol>
+      <p><b>For each task, record:</b> success (yes, with help, or no), time in seconds, and anything they said or hesitated over.</p>
+      <p><b>Closing questions:</b> "What was the most confusing part?" and "On a scale of 1 to 5, how easy was the site to use?"</p>
+    </details>
+    <div class="tbl" tabindex="0" role="region" aria-label="Participant results table">
+      <table>
+        <thead><tr><th>Participant</th><th>Device</th><th>Tasks completed (of 5)</th><th>Ease rating (1–5)</th><th>Main comment</th><th>Change I made</th></tr></thead>
+        <tbody>
+          <tr><td>P1</td><td><span class="todo">to fill in</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td></tr>
+          <tr><td>P2</td><td><span class="todo">to fill in</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td></tr>
+          <tr><td>P3</td><td><span class="todo">to fill in</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>7. What I learned</h3>
+    <p>I assumed my site was accessible because I had chosen good fonts and colours and checked dark mode. Testing showed that the problems were in places I wasn't looking, such as a single amber colour, or a table on a phone. It's the same lesson safebackup taught me: something isn't done until it has been verified. It's also my warning sign again. The tests that matter most are the ones I can't do alone.</p>
+  </div>
+</section>
+
+<!-- ============================================================ TASK 2 ETHICS REFLECTION -->
+<section id="ethics-reflection">
+  <div class="wrap">
+    <div class="eyebrow">Week 5 · Task 2 · Ethical dilemma reflection</div>
+    <h2>Reflecting on Equifax: my view and how I'll act</h2>
+    <p>In Week 2 I studied the 2017 Equifax breach, and in Week 4 I designed a better way to handle it (see <a href="#ethics">Ethics</a>). This reflection is more personal. What do I think about it, and what would I do if I faced the same kind of choice?</p>
+
+    <h3>My view of the dilemma</h3>
+    <p>When I first read about Equifax, I saw it as a technical failure: a known vulnerability that wasn't patched. The more I studied it, the more I saw it as a failure of ownership and honesty. The warning came out in March 2017, and the systems still weren't fixed months later. According to the FTC (2019), Equifax's patching process and its inventory of systems weren't good enough to catch the gap. Then, after the attack was discovered in late July, about six weeks passed before the public was told (Equifax, 2017).</p>
+    <p>I don't believe every person involved was dishonest. I think the harder truth is that ordinary people in ordinary jobs each assumed someone else had it covered. That troubles me more, because it's easy to imagine myself in that position. I know from my years as a network administrator how easy it is to put off a patch when the system is busy and everything seems fine. That's not the same as neglecting it on purpose, but for 147 million people the result is the same.</p>
+    <p>On disclosure, my view has become more balanced. A company does need some time to understand what happened, and announcing wrong facts can cause harm too. But the people whose data was taken had the most to lose from waiting. They couldn't freeze their credit or watch for fraud until they knew. I believe the right approach is to tell people early what is confirmed and what is still unknown, and then keep updating them. Waiting until the story is complete puts the company's comfort ahead of the people it's accountable to.</p>
+
+    <h3>How I'll handle similar situations</h3>
+    <p>I won't face a breach of 147 million records every week. I will face small versions of the same choice. These are the ones I expect, and what I've decided ahead of time:</p>
+    <div class="tbl" tabindex="0" role="region" aria-label="How I&#x27;ll handle similar situations table">
+      <table>
+        <thead><tr><th>Situation</th><th>What I'll do</th></tr></thead>
+        <tbody>
+          <tr><td>I'm asked to mark a patch "done" before it's verified.</td><td>Mark it "applied, not yet verified." I'll do the check that day or explain in writing why I can't.</td></tr>
+          <tr><td>A critical patch can't be applied in time because the system is too important to restart.</td><td>Escalate it in writing with a temporary protection (a firewall rule or isolating the system) and a date. I won't leave it quietly open.</td></tr>
+          <tr><td>I'm asked to delay telling users about a problem that affects them.</td><td>Ask why, and suggest a short, honest notice of what we know. If I'm asked to say something false, I won't, and I'll take it to the next level of leadership or the proper reporting channel.</td></tr>
+          <tr><td>I find a colleague's mistake.</td><td>Talk to them first, privately and kindly, then help fix it. The goal is to fix the problem, not to blame the person.</td></tr>
+          <tr><td>I find my own mistake.</td><td>Report it right away with what I know and what I'm doing about it, like publishing safebackup's weaknesses instead of hiding them.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Behind those answers is a short process I can use in the moment: <b>stop and name it</b> ("this is an ethical choice, not just a technical one"), <b>get the facts</b>, <b>ask who could be hurt</b>, <b>act or escalate in writing</b>, and <b>tell the truth early</b>.</p>
+
+    <h3>What this exercise taught me about ethics in IT</h3>
+    <ul>
+      <li><b>Most ethical choices in IT look boring.</b> A ticket status, a log entry, a default setting. Luke 16:10 fits exactly: faithfulness in small things is what makes a person trustworthy with big ones.</li>
+      <li><b>The people affected are usually invisible.</b> No consumer was in the room when a patch was postponed. Part of my job is to keep those people in mind for them.</li>
+      <li><b>Good processes make honesty easier.</b> In a crisis, people do what their routines allow. That's why I built the checklist and the notice template.</li>
+      <li><b>I can disagree without contention.</b> Escalating a risk means disagreeing with someone, maybe my boss. The Savior taught that contention is not of Him (3 Nephi 11:29). I can raise a concern firmly and respectfully, focusing on the problem and not the person (Acree, 2021; Ensign College, n.d.).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ TASK 3 MENTAL MAP -->
+<section id="mental-map">
+  <div class="wrap">
+    <div class="eyebrow">Week 5 · Task 3 · Reflection activity</div>
+    <h2>Mental map: integrating Christ's teachings into my work</h2>
+    <p><b>My reflection activity.</b> I wasn't able to attend the temple this week, so I took a pause in a quiet place to ponder and reflect. I thought about my current priorities and about the things I'm grateful for. That time of looking inward helped me realise that spiritual renewal isn't tied to one particular place. It depends on the state of mind I choose to bring. I can carry that quiet into an ordinary workday, too.</p>
+    <p>The map below captures what came out of that time. Jesus Christ is at the centre, because Elder Bednar (2018) taught that all things are gathered together in Him. Each strand connects a teaching to the way I want to work.</p>
+  </div>
+  <div class="wrap wide">
+    <figure class="map" aria-labelledby="map-cap">
+      <div class="map-center">
+        <span class="card-k">Centre</span>
+        <b>Jesus Christ</b>
+        <span>"Gather together in one all things in Christ" (Ephesians 1:10; Bednar, 2018)</span>
+      </div>
+      <div class="map-strands">
+        <div class="map-strand s1">
+          <b>Faith that acts</b>
+          <ul>
+            <li><i>Teaching:</i> "Anxiously engaged" (D&amp;C 58:27); act before you see (Kusch &amp; Kusch, 2024)</li>
+            <li><i>At work:</i> monitor before something breaks; take the next step even when I'm unsure</li>
+            <li><i>Practice:</i> test first, keep a rollback, then act with courage</li>
+          </ul>
+        </div>
+        <div class="map-strand s2">
+          <b>Integrity and stewardship</b>
+          <ul>
+            <li><i>Teaching:</i> faithful in the least (Luke 16:10); stand in truth (Marriott, n.d.)</li>
+            <li><i>At work:</i> verify before claiming success; protect data I'm trusted with</li>
+            <li><i>Practice:</i> honest status labels, checksums, patch evidence</li>
+          </ul>
+        </div>
+        <div class="map-strand s3">
+          <b>Charity through service</b>
+          <ul>
+            <li><i>Teaching:</i> serving others is serving God (Mosiah 2:17); no contention (3 Nephi 11:29)</li>
+            <li><i>At work:</i> the person behind every system; disagreeing respectfully</li>
+            <li><i>Practice:</i> plain-language messages, accessible design, kind reviews</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map-loop">
+        <div class="map-warn"><span class="card-k">Warning sign</span><b>Working alone too long</b><span>Relying only on my own understanding (Proverbs 3:5–6)</span></div>
+        <div class="map-arrow" aria-hidden="true">→</div>
+        <div class="map-realign"><span class="card-k">Realignment</span><b>Ask, counsel, pray</b><span>Two-hour rule · show work unfinished · pray about the specific task</span></div>
+        <div class="map-arrow" aria-hidden="true">→</div>
+        <div class="map-order"><span class="card-k">Result</span><b>A house of order</b><span>Learning by study and by faith (D&amp;C 88:118–119)</span></div>
+      </div>
+      <figcaption id="map-cap">Figure 1. My mental map. The three strands come from my portfolio. The bottom row shows how I notice my warning sign and come back to the centre.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <h3>Insights and realizations</h3>
+    <h4>1. Understanding comes from more than one source</h4>
+    <p>President Kusch described understanding as knowledge, experience, and wisdom joined with the help of the Holy Ghost, through both study and prayer (Kusch &amp; Kusch, 2024). That's also how good troubleshooting works. I read the documentation, check the logs, ask someone with more experience, and then decide. If I skip a source, I get a partial answer. In both my faith and my work, depending only on myself leaves something out.</p>
+    <h4>2. Standing in truth is a daily, technical habit</h4>
+    <p>Sister Marriott's message to stand in truth (Marriott, n.d.) made me think about how often my work asks me to state what's true: "the backup worked," "the server is patched," "your data is safe." Each statement either is or isn't true. Standing in truth at work means I only make claims I can verify, and I say "I don't know yet" when that's the honest answer.</p>
+    <h4>3. The temple teaches order, and order serves people</h4>
+    <p>The Lord's instruction to "establish a house… a house of order" (D&amp;C 88:119) connects closely to what a systems administrator does. Inventories, documentation, change control, and backups are forms of order. But I realised the purpose of order is not control. In the temple, order exists so that people can come unto Christ. In IT, order exists so that people can rely on their systems and get on with their lives.</p>
+    <h4>4. Differences make the work stronger</h4>
+    <p>My work involves people who know less about technology than I do and people who know much more. I want both kinds of difference to make me better, not to cause contention. The guidance on embracing differences (Ensign College, n.d.) helped me see that the users who struggle with my tools are giving me the most useful feedback.</p>
+    <h4>5. Patience is part of craftsmanship</h4>
+    <p>"In your patience possess ye your souls" (Luke 21:19). This week's design work was slow and step by step: test, fix one thing, test again. I used to see that as a delay. Now I see it as the same patience the Lord shows with me as He shapes my character a step at a time.</p>
+    <h3>My commitment</h3>
+    <p>I want to be the kind of IT professional people can trust without checking up on me, because I've already checked. And when I'm stuck, I want to ask for help early and humbly. I'll measure my progress by the strategies in my <a href="#review">review</a>: did I ask, did I verify, and did I serve the person on the other side of the system?</p>
+  </div>
+</section>
+
 <!-- ============================================================ VIDEO -->
 <section id="video">
   <div class="wrap">
-    <div class="eyebrow">Task 1 · Reflection on my development journey</div>
+    <div class="eyebrow">Week 4 · Task 1 · Reflection on my development journey</div>
     <h2>Video reflection: agency and my development</h2>
     <p><b>Video link:</b> <a href="https://youtu.be/CautLPkQL_4">https://youtu.be/CautLPkQL_4</a> · Length: about 4 minutes.</p>
+    <div class="video-embed" id="vid">
+      <button type="button" aria-label="Play video: Agency and my development (about 4 minutes)" data-id="CautLPkQL_4">
+        <img src="https://i.ytimg.com/vi/CautLPkQL_4/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" onerror="this.remove()">
+        <span class="play">▶ Play video (4 min)</span>
+      </button>
+    </div>
+    <p class="src">The player loads from YouTube only when you press Play (privacy-enhanced mode). Turn on captions with the CC button.</p>
     <p>I wrote this script after reflecting on Doctrine and Covenants 58:26–28. I use it as a guide when I record, not as something to read word for word.</p>
     <details>
       <summary>Read the video script</summary>
@@ -195,7 +572,7 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
 <!-- ============================================================ FAITH -->
 <section id="faith">
   <div class="wrap">
-    <div class="eyebrow">Task 2 · Spiritual Progression Portfolio: Expansion and Deepening</div>
+    <div class="eyebrow">Week 4 · Task 2 · Spiritual Progression Portfolio: Expansion and Deepening</div>
     <h2>Faith and learning: an expanded collection</h2>
     <p>In Week 2 I gathered seven items: D&amp;C 58:27–28, Mosiah 2:17, Luke 16:10, Ether 12:27, Nelson (2021), Johnson (2021), and a personal stewardship commitment. This week I added seven new materials and reorganised the whole collection under my three guiding principles. Each new entry has its source, what it means to me, and the professional decision it changed. Entries marked <em>Week 2</em> now include a follow-up reflection, so you can see how my understanding has changed.</p>
 
@@ -286,10 +663,10 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
 <!-- ============================================================ ALIGNMENT -->
 <section id="alignment">
   <div class="wrap">
-    <div class="eyebrow">Task 2 · Professional competencies and spiritual beliefs</div>
+    <div class="eyebrow">Week 4 · Task 2 · Professional competencies and spiritual beliefs</div>
     <h2>How my competencies align with my beliefs</h2>
     <p>Each row below links a competency employers look for in a network or systems administrator to the belief that motivates it, and then to evidence in this portfolio. I check the alignment against evidence because a belief only matters professionally when it changes what I actually do.</p>
-    <div class="tbl">
+    <div class="tbl" tabindex="0" role="region" aria-label="How my competencies align with my beliefs table">
       <table>
         <thead><tr><th>Competency</th><th>Spiritual principle</th><th>How the belief shapes the work</th><th>Evidence</th></tr></thead>
         <tbody>
@@ -312,7 +689,7 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
 <!-- ============================================================ PROJECTS -->
 <section id="projects">
   <div class="wrap">
-    <div class="eyebrow">Task 3 · Professional Growth Portfolio: Project Integration</div>
+    <div class="eyebrow">Week 4 · Task 3 · Professional Growth Portfolio: Project Integration</div>
     <h2>Projects</h2>
     <p>Every project follows the same pattern from my Week 2 plan: the user's need, my solution, the evidence, the limitations, and a decision my faith influenced. The status labels are accurate.</p>
 
@@ -353,7 +730,7 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
       </dl>
       <details>
         <summary>View the patch verification checklist</summary>
-        <div class="tbl"><table>
+        <div class="tbl" tabindex="0" role="region" aria-label="View the patch verification checklist table"><table>
           <thead><tr><th>Step</th><th>Field</th><th>Example (fictional)</th></tr></thead>
           <tbody>
             <tr><td class="num">1</td><td>Advisory received and severity</td><td>Web framework RCE advisory · Critical (CVSS 10.0) · received 2026-03-07</td></tr>
@@ -401,12 +778,12 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
 <!-- ============================================================ ETHICS -->
 <section id="ethics">
   <div class="wrap">
-    <div class="eyebrow">Task 3 · Ethical dilemma alternative</div>
+    <div class="eyebrow">Week 4 · Task 3 · Ethical dilemma alternative</div>
     <h2>Equifax 2017: a better way to handle it</h2>
     <p>In Week 2 I analysed the 2017 Equifax breach. About 147 million people's names, birth dates, Social Security numbers, and addresses were exposed through an Apache Struts vulnerability. The FTC (2019) alleged that the company was warned in March 2017 and did not patch it. Equifax (2017) reported detecting suspicious traffic on 29 July, and it announced the breach publicly on 7 September. That's about six weeks later. The settlement reached at least US$575 million.</p>
 
     <h3>Essential ethical principles</h3>
-    <div class="tbl"><table>
+    <div class="tbl" tabindex="0" role="region" aria-label="Essential ethical principles table"><table>
       <thead><tr><th>Principle</th><th>What it requires here</th><th>Where it was weakest</th></tr></thead>
       <tbody>
         <tr><td><b>Responsibility (stewardship)</b></td><td>Whoever holds people's data must actively protect it, with a named owner for every critical risk.</td><td>A known critical vulnerability was not fixed and verified.</td></tr>
@@ -434,7 +811,7 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
     </ul>
 
     <h3>Why this is better for everyone involved</h3>
-    <div class="tbl"><table>
+    <div class="tbl" tabindex="0" role="region" aria-label="Why this is better for everyone involved table"><table>
       <thead><tr><th>Stakeholder</th><th>Outcome under the alternative</th></tr></thead>
       <tbody>
         <tr><td><b>Consumers</b></td><td>The breach most likely never happens, because a critical patch was verified within days. If it did happen, people could freeze credit weeks sooner, which shortens the window when stolen data is most useful to fraudsters.</td></tr>
@@ -450,13 +827,13 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
 <!-- ============================================================ REFINEMENT -->
 <section id="refinement">
   <div class="wrap">
-    <div class="eyebrow">Task 4 · IT Project: Refinement and Ethical Integration</div>
+    <div class="eyebrow">Week 4 · Task 4 · IT Project: Refinement and Ethical Integration</div>
     <h2>Refinement report: safebackup v1 → v2</h2>
     <p><b>Project chosen:</b> the Automation and Reliability project from my Week 2 plan, a Python script that backs up a folder. I chose it because backups are central to system administration, and because a backup you can't trust is worse than none: it creates false confidence.</p>
 
     <h3>1. Analysing version 1</h3>
     <p>Version 1 had 20 lines. It called <code>shutil.copytree</code> into a timestamped folder and printed "Backed up." I tested it the way a real user might and recorded what happened:</p>
-    <div class="tbl"><table>
+    <div class="tbl" tabindex="0" role="region" aria-label="Analysing version 1 table"><table>
       <thead><tr><th>Test</th><th>v1 result</th><th>Category</th></tr></thead>
       <tbody>
         <tr><td>Folder containing <code>.env</code> (API key)</td><td>Copied the secret into the backup with no warning</td><td>Security, privacy</td></tr>
@@ -479,7 +856,7 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
     </ul>
 
     <h3>3. Refinements made</h3>
-    <div class="tbl"><table>
+    <div class="tbl" tabindex="0" role="region" aria-label="Refinements made table"><table>
       <thead><tr><th>Challenge</th><th>Refinement in v2</th><th>Why this approach</th></tr></thead>
       <tbody>
         <tr><td>Unverified success</td><td>Every file is SHA-256 hashed at the source and in the copy. The <code>manifest.json</code> records each hash. "Complete and verified" prints only if they all match.</td><td>Hashes give proof, not hope. SHA-256 is in the standard library, so there are no dependencies to install.</td></tr>
@@ -501,7 +878,7 @@ footer{padding-block:40px; color:var(--muted); font-size:14.5px; border-top:1px 
 
     <h3>5. Testing and evidence</h3>
     <p>I wrote 13 automated tests. All use fictional data in temporary folders.</p>
-    <pre>$ python -m unittest -v test_safebackup
+    <pre tabindex="0">$ python -m unittest -v test_safebackup
 test_backup_success ............................ ok
 test_dest_inside_source ........................ ok
 test_log_privacy ............................... ok
@@ -519,7 +896,7 @@ test_tamper_detected ........................... ok
 Ran 13 tests in 0.040s
 OK</pre>
     <p>Sample run of v2 on a test folder that contains two ordinary files and a fake <code>.env</code> file:</p>
-    <pre>$ python safebackup.py backup src backups
+    <pre tabindex="0">$ python safebackup.py backup src backups
 Backup complete and verified: 2 files (9 bytes) saved to snapshot_20261005_222005_054089.
 Left out 1 file(s) that look like passwords or keys:
   - .env
@@ -529,7 +906,7 @@ $ python safebackup.py verify backups
 snapshot_20261005_222005_054089: all 2 files match their recorded checksums.</pre>
 
     <h3>6. Impact of the changes</h3>
-    <div class="tbl"><table>
+    <div class="tbl" tabindex="0" role="region" aria-label="Impact of the changes table"><table>
       <thead><tr><th>Measure</th><th class="num">v1</th><th class="num">v2</th></tr></thead>
       <tbody>
         <tr><td>Commands (backup / verify / restore / prune)</td><td class="num">1</td><td class="num">4</td></tr>
@@ -547,7 +924,7 @@ snapshot_20261005_222005_054089: all 2 files match their recorded checksums.</pr
 
     <h3>8. Source code</h3>
     <p>Repository: <a href="https://github.com/Gki12/it497-portfolio">github.com/Gki12/it497-portfolio</a></p>
-    <details><summary>safebackup.py (version 2, refined)</summary><pre>&quot;&quot;&quot;safebackup.py — version 2 (refined).
+    <details><summary>safebackup.py (version 2, refined)</summary><pre tabindex="0">&quot;&quot;&quot;safebackup.py — version 2 (refined).
 
 A small, standard-library-only backup tool built for trustworthy results:
 
@@ -923,7 +1300,7 @@ def main(argv: list[str] | None = None) -&gt; int:
 if __name__ == &quot;__main__&quot;:
     sys.exit(main())
 </pre></details>
-    <details><summary>test_safebackup.py (13 tests)</summary><pre>&quot;&quot;&quot;Tests for safebackup v2. Run with:  python -m unittest -v test_safebackup
+    <details><summary>test_safebackup.py (13 tests)</summary><pre tabindex="0">&quot;&quot;&quot;Tests for safebackup v2. Run with:  python -m unittest -v test_safebackup
 All test data is fictional and created in temporary folders.&quot;&quot;&quot;
 import hashlib
 import io
@@ -1092,7 +1469,7 @@ class SafeBackupTests(unittest.TestCase):
 if __name__ == &quot;__main__&quot;:
     unittest.main(verbosity=2)
 </pre></details>
-    <details><summary>v1_backup.py (baseline, kept for comparison)</summary><pre>&quot;&quot;&quot;backup.py — version 1 (baseline, Week 2 plan).
+    <details><summary>v1_backup.py (baseline, kept for comparison)</summary><pre tabindex="0">&quot;&quot;&quot;backup.py — version 1 (baseline, Week 2 plan).
 
 Copies a source folder into a timestamped folder under a destination.
 Kept unchanged in the repository so the refinements in v2 can be compared.
@@ -1128,14 +1505,14 @@ if __name__ == &quot;__main__&quot;:
 <!-- ============================================================ PEER -->
 <section id="peer">
   <div class="wrap">
-    <div class="eyebrow">Task 4 · Peer review</div>
+    <div class="eyebrow">Week 4 · Task 4 · Peer review</div>
     <h2>Peer review evaluation</h2>
     <p><span class="status st-prog">Waiting for assignment</span></p>
     <p><b>Reviewer:</b> Gaston Kasongo · <b>Teammate:</b> To be assigned · <b>Project reviewed:</b> To be assigned</p>
     <p>I haven't been assigned a teammate for this review yet. I prepared the review framework ahead of time so I can give a thorough, fair evaluation as soon as one is assigned. It looks at the two areas the course emphasises, technical skill and ethical integration. Every rating must be backed by something specific I observed and paired with a suggestion the teammate can act on.</p>
 
     <h3>Rating scale</h3>
-    <div class="tbl"><table>
+    <div class="tbl" tabindex="0" role="region" aria-label="Rating scale table"><table>
       <thead><tr><th class="num">Rating</th><th>Meaning</th></tr></thead>
       <tbody>
         <tr><td class="num">4 · Exemplary</td><td>Thoroughly addressed. I could not find a meaningful gap after testing it.</td></tr>
@@ -1147,7 +1524,7 @@ if __name__ == &quot;__main__&quot;:
 
     <h3>Evaluation</h3>
     <p class="src">The "What I check" column is the method I'll use. The last two columns are filled in during the review.</p>
-    <div class="tbl"><table>
+    <div class="tbl" tabindex="0" role="region" aria-label="Evaluation table"><table>
       <thead><tr><th>Criterion</th><th>What I check</th><th class="num">Rating</th><th>Evidence and suggestion</th></tr></thead>
       <tbody>
         <tr><td colspan="4"><b>Technical skills</b></td></tr>
@@ -1214,23 +1591,74 @@ if __name__ == &quot;__main__&quot;:
   <div class="wrap refs">
     <div class="eyebrow">APA 7</div>
     <h2>References</h2>
+    <p>Acree, N. (2021, September). How to disagree without being disagreeable. <i>Liahona</i>. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/liahona/2021/09/digital-only-young-adults/how-to-disagree-without-being-disagreeable?lang=eng</p>
     <p>Bednar, D. A. (2018, November). Gather together in one all things in Christ. <i>Ensign</i> or <i>Liahona</i>. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/general-conference/2018/10/gather-together-in-one-all-things-in-christ?lang=eng</p>
     <p><i>The Book of Mormon</i>. (n.d.). The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng</p>
     <p><i>Doctrine and Covenants</i>. (n.d.). The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/scriptures/dc-testament?lang=eng</p>
+    <p>Deque Systems. (2025). <i>axe-core</i> (Version 4.14) [Computer software]. GitHub. https://github.com/dequelabs/axe-core</p>
+    <p>Ensign College. (n.d.). <i>Embracing differences and overcoming contention</i> [Course resource]. IT 497: IT Capstone.</p>
     <p>Equifax. (2017, September 15). <i>Equifax releases details on cybersecurity incident, announces personnel changes</i>. https://investor.equifax.com/news-events/press-releases/detail/237/equifax-releases-details-on-cybersecurity-incident</p>
     <p>Federal Trade Commission. (2019, July 22). <i>Equifax to pay $575 million as part of settlement with FTC, CFPB, and states related to 2017 data breach</i>. https://www.ftc.gov/news-events/news/press-releases/2019/07/equifax-pay-575-million-part-settlement-ftc-cfpb-states-related-2017-data-breach</p>
     <p>Holland, J. R. (2015, February 6). <i>Be not afraid, only believe</i> [Address to CES religious educators]. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/broadcasts/article/evening-with-a-general-authority/2015/02/helping-with-the-real-issues?lang=eng</p>
     <p>Johnson, C. N. (2021, October). <i>Invite Christ to author your story</i>. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/general-conference/2021/10/42johnson?lang=eng</p>
     <p><i>King James Bible</i>. (n.d.). The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/scriptures/bible?lang=eng</p>
+    <p>Kusch, B. C., &amp; Kusch, A. (2024, January 9). <i>I tell you these things that ye may understand</i> [Devotional]. Ensign College. https://speeches.ensign.edu/devotional/president-bruce-c-kusch-and-sister-alynda-kusch-01-2023</p>
+    <p>Marriott, N. F. (n.d.). <i>Stand in truth</i> [Video]. YouTube. https://www.youtube.com/watch?v=ATzkKB7OAjo</p>
     <p>Nelson, R. M. (2021, October). <i>Make time for the Lord</i>. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/general-conference/2021/10/59nelson?lang=eng</p>
+    <p>Nielsen, J. (2024, January 30). <i>10 usability heuristics for user interface design</i>. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/</p>
+    <p><i>Preach my gospel: A guide to sharing the gospel of Jesus Christ</i>. (2023). The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-2023?lang=eng</p>
     <p>Python Software Foundation. (n.d.). <i>hashlib — Secure hashes and message digests</i>. Python 3 documentation. https://docs.python.org/3/library/hashlib.html</p>
     <p>Wirthlin, J. B. (2008, October). <i>Come what may, and love it</i>. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/general-conference/2008/10/come-what-may-and-love-it?lang=eng</p>
+    <p>World Wide Web Consortium. (2023, October 5). <i>Web content accessibility guidelines (WCAG) 2.2</i>. https://www.w3.org/TR/WCAG22/</p>
   </div>
 </section>
 
+</main>
+<button type="button" class="to-top" id="toTop" aria-label="Back to top">↑ Top</button>
 <footer>
-  <div class="wrap">Gaston Kasongo · IT 497 Capstone · October 2026. Project examples use fictional data. Scripture quotations are from editions published by The Church of Jesus Christ of Latter-day Saints.</div>
+  <div class="wrap">Gaston Kasongo · IT 497 Capstone · Week 5 · October 2026. Project examples use fictional data. Scripture quotations are from editions published by The Church of Jesus Christ of Latter-day Saints.</div>
 </footer>
 
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Lazy YouTube embed (privacy-enhanced)
+  var vb = document.querySelector('#vid button');
+  if (vb) vb.addEventListener('click', function(){
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + vb.dataset.id + '?autoplay=1&rel=0&cc_load_policy=1';
+    f.title = 'Video reflection: Agency and my development';
+    f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true;
+    vb.replaceWith(f); f.focus();
+  });
+  // Highlight current section in the nav
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.bar a'));
+  var map = {}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var groups = {review:'week5', usability:'week5', 'ethics-reflection':'week5', 'mental-map':'week5'};
+  var current = null;
+  function setCurrent(id){
+    var a = map[id] || map[groups[id]]; if (!a || a === current) return;
+    if (current) current.removeAttribute('aria-current');
+    a.setAttribute('aria-current','true'); current = a;
+    var ul = a.closest('ul'); var r = a.getBoundingClientRect(), u = ul.getBoundingClientRect();
+    if (r.left < u.left || r.right > u.right - 44) ul.scrollTo({left: a.offsetLeft - 20, behavior: reduce ? 'auto' : 'smooth'});
+  }
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) setCurrent(e.target.id); });
+    }, {rootMargin:'-30% 0px -65% 0px'});
+    document.querySelectorAll('header.hero, main section[id]').forEach(function(el){ io.observe(el); });
+  }
+  // Back to top
+  var tt = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){ tt.classList.toggle('show', window.scrollY > 900); }, {passive:true});
+  tt.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+    document.getElementById('main').focus({preventScroll:true});
+  });
+})();
+</script>
 </body>
 </html>
