@@ -271,7 +271,7 @@ section.week5{background:var(--surface)}
         <thead><tr><th>Strategy</th><th>What I'll do</th><th>Why it helps</th></tr></thead>
         <tbody>
           <tr><td><b>The two-hour rule</b></td><td>If I'm stuck for two hours, I ask someone: a classmate, my instructor, or a technical forum.</td><td>It turns asking for help into a habit I don't have to decide on each time.</td></tr>
-          <tr><td><b>Show it unfinished</b></td><td>Each week I'll show one piece of unfinished work to another person. I'll start with the three usability tests in this report.</td><td>Feedback is cheapest early. It also practises the humility I listed above.</td></tr>
+          <tr><td><b>Show it unfinished</b></td><td>Each week I'll show one piece of unfinished work to another person. I started with this week's usability test.</td><td>Feedback is cheapest early. It also practises the humility I listed above.</td></tr>
           <tr><td><b>Ask in prayer specifically</b></td><td>Before I start a hard task, I'll pray about that task by name and ask what I'm missing.</td><td>It keeps the Lord as my first source, as Sister Kusch taught.</td></tr>
           <tr><td><b>Record what I learn</b></td><td>I'll keep a short weekly note of what I learned and who helped me.</td><td>It shows me how much of my growth comes through other people.</td></tr>
           <tr><td><b>Disagree without contention</b></td><td>When feedback stings, I'll first restate the other person's point, then respond.</td><td>Differences make work better when they don't become contention (3 Nephi 11:29; Ensign College, n.d.).</td></tr>
@@ -301,7 +301,7 @@ section.week5{background:var(--surface)}
 
     <h3>4. Plan for finishing the portfolio</h3>
     <ol>
-      <li><b>Run the three participant tests</b> using the script in the usability report, then fix the top problem they find.</li>
+      <li><b>Test with two more people</b> using the script in the usability report (one test is done), then fix the top problem they find.</li>
       <li><b>Complete the peer review</b> as soon as a teammate is assigned. Ask my instructor this week.</li>
       <li><b>Build the home lab</b> and add an inventory, a patch log, and screenshots as evidence.</li>
       <li><b>Shorten the long sections:</b> link to the full source code on GitHub instead of showing all of it here.</li>
@@ -334,7 +334,7 @@ section.week5{background:var(--surface)}
           <tr><td><b>Automated accessibility scan</b></td><td>axe-core 4.14 (Deque Systems, 2025) run in a Chromium browser through Playwright, checking the WCAG 2.0, 2.1, and 2.2 A/AA rules plus best practices. I ran it in three conditions: laptop (1366 × 800), phone (375 × 740), and dark mode.</td><td>It finds coded problems reliably, such as contrast, landmarks, and keyboard access. It can't judge whether the content makes sense.</td></tr>
           <tr><td><b>Keyboard-only walkthrough</b></td><td>I moved through the page with Tab, Shift+Tab, and Enter only, watching where the focus went.</td><td>It shows whether someone who can't use a mouse can reach everything.</td></tr>
           <tr><td><b>Heuristic review</b></td><td>I checked the site against Nielsen's 10 usability heuristics (Nielsen, 2024) at each screen size.</td><td>It finds design problems quickly. It's still only my opinion, though, so I added real users below.</td></tr>
-          <tr><td><b>Task-based tests with people</b></td><td>Three participants, five tasks each, thinking aloud. See the script in section 6.</td><td>It shows real behaviour and confusion I can't predict myself.</td></tr>
+          <tr><td><b>Task-based tests with people</b></td><td>One participant this week (my nephew), five tasks, using the script in section 6. I plan to test with two more people.</td><td>It shows real behaviour and confusion I can't predict myself.</td></tr>
         </tbody>
       </table>
     </div>
@@ -416,15 +416,15 @@ section.week5{background:var(--surface)}
       <table>
         <thead><tr><th>Participant</th><th>Device</th><th>Tasks completed (of 5)</th><th>Ease rating (1–5)</th><th>Main comment</th><th>Change I made</th></tr></thead>
         <tbody>
-          <tr><td>P1</td><td><span class="todo">to fill in</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td></tr>
-          <tr><td>P2</td><td><span class="todo">to fill in</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td></tr>
-          <tr><td>P3</td><td><span class="todo">to fill in</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td><td><span class="todo">—</span></td></tr>
+          <tr><td>P1 · my nephew</td><td>Not recorded</td><td>5 of 5 (found the video; playback not confirmed)</td><td>5</td><td>"The headings are clear, so finding things is quick. The page is very long, but the menu at the top helps."</td><td>Planned: shorten the page by moving the full source code to GitHub (finishing plan, step 4).</td></tr>
         </tbody>
       </table>
     </div>
 
+    <p>My nephew completed every task and rated the site 5 out of 5. His one difficulty, the length of the page, matches what I found in the heuristic review, so shortening the page is now my top design priority. One participant is a small sample, though. I plan to test with two more people, including a classmate, before the final submission.</p>
+
     <h3>7. What I learned</h3>
-    <p>I assumed my site was accessible because I had chosen good fonts and colours and checked dark mode. Testing showed that the problems were in places I wasn't looking, such as a single amber colour, or a table on a phone. It's the same lesson safebackup taught me: something isn't done until it has been verified. It's also my warning sign again. The tests that matter most are the ones I can't do alone.</p>
+    <p>I assumed my site was accessible because I had chosen good fonts and colours and checked dark mode. Testing showed that the problems were in places I wasn't looking, such as a single amber colour, or a table on a phone. It's the same lesson safebackup taught me: something isn't done until it has been verified. It's also my warning sign again. The tests that matter most are the ones I can't do alone. Asking my nephew for ten minutes was a small step, but it was a step away from working alone.</p>
   </div>
 </section>
 
