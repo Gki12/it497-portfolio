@@ -167,6 +167,12 @@ section.week5{background:var(--surface)}
   .map-strands{grid-template-columns:1fr} .map-strands::before{display:none}
   .map-loop{grid-template-columns:1fr} .map-arrow{transform:rotate(90deg); justify-self:center; line-height:1}
 }
+.wig{border-left:5px solid var(--accent); padding:12px 16px; background:var(--surface); font-size:18px}
+details.more{border:0; background:none; margin-top:18px}
+details.more > summary{display:inline-flex; align-items:center; min-height:44px; padding:8px 16px; border:1px solid var(--line); border-radius:22px; background:var(--surface); color:var(--accent)}
+details.more[open] > summary{margin-bottom:8px}
+details.more > :not(summary){margin-inline:0}
+details.more pre{margin-inline:0}
 </style>
 </head>
 <body>
@@ -176,6 +182,7 @@ section.week5{background:var(--surface)}
 <nav class="bar" aria-label="Sections">
   <ul>
     <li><a href="#home">Home</a></li>
+    <li><a href="#week6">Week 6</a></li>
     <li><a href="#week5">Week 5</a></li>
     <li><a href="#video">Video</a></li>
     <li><a href="#faith">Faith</a></li>
@@ -193,7 +200,7 @@ section.week5{background:var(--surface)}
 <!-- ============================================================ HOME -->
 <header class="hero" id="home">
   <div class="wrap">
-    <div class="eyebrow">IT 497 Capstone · Week 5 · Integration, Reflection, and Design Enhancement</div>
+    <div class="eyebrow">IT 497 Capstone · Week 6 · Finalization and Presentations</div>
     <h1>Gaston Kasongo</h1>
     <p class="lede">I'm a network and systems administrator. My work is to keep people's systems and information dependable, and I try to do it as a disciple of Jesus Christ who treats every account, password, and backup as a stewardship.</p>
     <svg class="rope" viewBox="0 0 760 44" preserveAspectRatio="none" aria-hidden="true">
@@ -201,7 +208,7 @@ section.week5{background:var(--surface)}
       <path d="M0 22 C 60 40, 120 4, 190 22 S 320 40, 380 22 S 510 4, 570 22 S 700 40, 760 22" style="stroke:var(--strand2)"/>
       <path d="M0 14 C 90 30, 140 14, 190 30 S 300 14, 380 14 S 480 30, 570 30 S 690 14, 760 14" style="stroke:var(--strand3); opacity:.85"/>
     </svg>
-    <p><a href="#week5"><b>New in Week 5:</b> review and reflection, usability report, ethics reflection, and mental map →</a></p>
+    <p><a href="#week6"><b>Final portfolio (Week 6):</b> portfolio map, action plan, reflective essay, peer reviews, and presentation →</a></p>
     <p>Elder David A. Bednar (2018) compares a rope to many separate strands twisted together until they become stronger as one. This portfolio follows that idea. Three guiding principles run through every section, and each is coloured the same way wherever it shows up. You can trace each one from scripture, to a decision in my work, to the evidence that I acted on it.</p>
     <div class="strands">
       <div class="strand s1"><b>Faith that acts</b><span>Agency and initiative: being "anxiously engaged" without waiting to be told (D&amp;C 58:26–28).</span></div>
@@ -209,11 +216,128 @@ section.week5{background:var(--surface)}
       <div class="strand s3"><b>Charity through service</b><span>Technology that serves the person who depends on it (Mosiah 2:17).</span></div>
     </div>
     <div class="meta-row">
-      <span>Instructor: Luman Hohaia</span><span>Updated October 2026 (Week 5)</span>
+      <span>Instructor: Luman Hohaia</span><span>Final version, October 2026 (Week 6)</span>
       <span>Focus: Networks and System Administration</span>
     </div>
   </div>
 </header>
+
+<!-- ============================================================ WEEK 6 HUB -->
+<section id="week6" class="week5">
+  <div class="wrap">
+    <div class="eyebrow">Week 6 · Finalization and Presentations</div>
+    <h2>My final portfolio</h2>
+    <p>This is the finished version of my two portfolios. They share one page because they tell one story, but each has its own sections. Use the map below to go straight to either one. The four pieces I added this week are underneath.</p>
+    <div class="tbl" tabindex="0" role="region" aria-label="Portfolio map table">
+      <table>
+        <thead><tr><th>Spiritual Progression Portfolio</th><th>Professional Growth Portfolio</th></tr></thead>
+        <tbody>
+          <tr><td><a href="#home">Three guiding principles</a> (the rope)</td><td><a href="#resume">Résumé</a> and <a href="#projects">credentials</a></td></tr>
+          <tr><td><a href="#video">Video reflection on agency</a></td><td><a href="#projects">Projects</a>: safebackup, SACIM network administration, patch checklist, home lab</td></tr>
+          <tr><td><a href="#faith">Faith and learning collection</a> (14 entries)</td><td><a href="#refinement">IT project refinement report</a></td></tr>
+          <tr><td><a href="#alignment">How my competencies align with my beliefs</a></td><td><a href="#ethics">Equifax ethics analysis</a> and <a href="#ethics-reflection">my reflection</a></td></tr>
+          <tr><td><a href="#review">Christlike attributes and warning signs</a></td><td><a href="#usability">Usability testing report</a></td></tr>
+          <tr><td><a href="#mental-map">Mental map</a></td><td><a href="#references">References</a> (APA 7)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cards">
+      <a class="card s1" href="#action-plan"><span class="card-k">Week 6</span><b>Action plan</b><span>My goals for spiritual and professional growth over the next 12 months</span></a>
+      <a class="card s2" href="#essay"><span class="card-k">Week 6</span><b>Reflective essay</b><span>How well the portfolio matches my first goals, and how those goals changed</span></a>
+      <a class="card s3" href="#peer"><span class="card-k">Week 6</span><b>Peer review report</b><span>The feedback I gave, the feedback I received, and what I changed</span></a>
+      <a class="card s2" href="#presentation"><span class="card-k">Week 6</span><b>Presentation and course evaluation</b><span>My slide deck for the teacher, and the evaluation status</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ACTION PLAN -->
+<section id="action-plan">
+  <div class="wrap">
+    <div class="eyebrow">Week 6 · Action plan for ongoing development</div>
+    <h2>Action plan: the next 12 months</h2>
+    <p>James wrote, "be ye doers of the word, and not hearers only" (James 1:22). A plan only matters when it turns into work. The course reading on co-creating physically ("Co-Create Physically and Be Accountable," n.d.) introduced me to the 4 Disciplines of Execution: focus on what is wildly important, act on lead measures, keep a scoreboard, and keep a regular rhythm of accountability. I built this plan on those four ideas. Each goal has weekly actions I control (lead measures), a date, and the evidence that will prove it.</p>
+
+    <h3>My wildly important goal</h3>
+    <p class="wig"><b>By September 30, 2027, I will work in a network or systems administration role where people can trust me with their systems, while keeping my daily devotion to the Lord at the centre of my week.</b></p>
+    <p>Everything below either moves me toward that goal or protects the kind of person I want to be when I reach it.</p>
+
+    <h3>Professional goals</h3>
+    <div class="tbl" tabindex="0" role="region" aria-label="Professional goals table">
+      <table>
+        <thead><tr><th>Goal</th><th>Weekly lead measures</th><th>Target date</th><th>Evidence</th><th>Strand</th></tr></thead>
+        <tbody>
+          <tr><td><b>Finish the home security lab</b> I planned in Week 2</td><td>Two lab sessions a week: inventory, update checks, a restricted user, a remediation log</td><td class="num">Nov 30, 2026</td><td>Lab page in this portfolio with sanitized screenshots and a test that an ordinary user can't run admin commands</td><td><span class="tag s2">Stewardship</span></td></tr>
+          <tr><td><b>Earn the CompTIA Network+ certification</b></td><td>5 hours of study a week; one practice exam every two weeks, with the score recorded</td><td class="num">Mar 31, 2027</td><td>Certificate added to my résumé</td><td><span class="tag s1">Faith that acts</span></td></tr>
+          <tr><td><b>Release safebackup version 3</b> with encryption</td><td>One focused session a week; every change covered by a test</td><td class="num">Jan 31, 2027</td><td>GitHub release notes and passing tests</td><td><span class="tag s2">Integrity</span></td></tr>
+          <tr><td><b>Find an IT mentor</b> (planned in Week 2, not yet done)</td><td>Contact one experienced IT professional a week until someone agrees; then meet once a month</td><td class="num">Dec 15, 2026</td><td>Notes from each meeting and one change I made because of it</td><td><span class="tag s3">Charity</span></td></tr>
+          <tr><td><b>Apply for administration roles</b></td><td>Two tailored applications a week, starting in January 2027</td><td class="num">From Jan 2027</td><td>Application log; interviews; offers</td><td><span class="tag s1">Faith that acts</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Spiritual goals</h3>
+    <div class="tbl" tabindex="0" role="region" aria-label="Spiritual goals table">
+      <table>
+        <thead><tr><th>Goal</th><th>Lead measures</th><th>Target</th><th>Evidence</th><th>Strand</th></tr></thead>
+        <tbody>
+          <tr><td><b>Keep the Lord first in my day</b></td><td>Ten minutes of prayer and scripture study before any study or work, now seven days a week instead of five</td><td class="num">Daily, from Oct 2026</td><td>A check mark each day in my weekly review</td><td><span class="tag s1">Faith that acts</span></td></tr>
+          <tr><td><b>Attend the temple</b></td><td>Plan the date and the travel a month ahead</td><td class="num">At least once a quarter</td><td>Dates recorded in my journal</td><td><span class="tag s1">Faith that acts</span></td></tr>
+          <tr><td><b>Serve someone with my skills</b></td><td>Help one person each month with a technology problem (family, ward, or community)</td><td class="num">Monthly</td><td>A short service log: who I helped (no names), the problem, what they can now do</td><td><span class="tag s3">Charity</span></td></tr>
+          <tr><td><b>Stop working alone too long</b> (my warning sign)</td><td>The two-hour rule; show one unfinished piece of work to someone each week</td><td class="num">Weekly</td><td>The name of the person and what I learned, in my weekly review</td><td><span class="tag s3">Charity</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>My scoreboard and rhythm of accountability</h3>
+    <ul>
+      <li><b>Every Sunday</b> I'll spend 20 minutes on a weekly review. I'll mark each lead measure as done or not done, write one thing I learned, and choose next week's actions. The Lord asked His servants to "render an account" of their stewardship (D&amp;C 72:3). This is my way of returning and reporting.</li>
+      <li><b>Once a month</b> I'll share my scoreboard with my mentor (once I have one) or with a family member. Feedback creates accountability ("Co-Create Physically and Be Accountable," n.d.), and I've learned I need it from outside myself.</li>
+      <li><b>Every three months</b> I'll update this portfolio with new evidence and an honest status for each goal, including what I didn't finish.</li>
+    </ul>
+    <p>Casey Hurley taught that the Lord honours real effort, and that we can't skip the climb and still receive what is at the top (Hurley, 2024). Elder Morrison taught that the path often changes, and that the Lord's timing can be better than our own (Morrison, 2024). I'll hold these goals firmly but humbly. If the Lord opens a different door, the plan can change. The habits behind it shouldn't.</p>
+  </div>
+</section>
+
+<!-- ============================================================ REFLECTIVE ESSAY -->
+<section id="essay">
+  <div class="wrap">
+    <div class="eyebrow">Week 6 · Reflective essay</div>
+    <h2>From plan to portfolio: how my goals held up and how they changed</h2>
+
+    <h3>Where I started</h3>
+    <p>In Week 1, I set three SMART goals. The first was to complete a professional portfolio with an introduction, a résumé, three IT project artifacts, and a reflection for each by Week 5. The second was to document one learning experience, one challenge, and one action every week. The third was to practise disciple leadership by praying before major tasks, acting with integrity, and using my IT skills to help at least one person. In Week 2, I turned those goals into a detailed plan: seven spiritual entries, three projects (a security lab, a community website, and a backup script), GitHub Pages as my platform, an IT mentor, and the Equifax case as my ethics study. I also wrote that "actual experiences and feedback will determine what I can honestly claim about my growth at the end of the course." This essay is that honest check.</p>
+
+    <h3>How the portfolio matches my goals</h3>
+    <div class="tbl" tabindex="0" role="region" aria-label="Goals and results table">
+      <table>
+        <thead><tr><th>What I planned</th><th>What happened</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>A portfolio with an introduction, résumé, three project artifacts, and reflections (Week 1, goal 1)</td><td>All of it is published on GitHub Pages: safebackup, the patch checklist and incident template, and my SACIM network administration experience, each with a reflection.</td><td><span class="status st-done">Met</span></td></tr>
+          <tr><td>A dated weekly record of learning, a challenge, and an action (Week 1, goal 2)</td><td>My weekly portfolio sections recorded what I learned and changed, but I didn't keep a separate journal every week as I planned.</td><td><span class="status st-prog">Partly met</span></td></tr>
+          <tr><td>Prayer before major tasks, integrity, and helping one person with technology (Week 1, goal 3)</td><td>I kept the ten-minute habit and built integrity into my work. I haven't yet documented an act of technology service, so it is now a monthly goal in my action plan.</td><td><span class="status st-prog">Partly met</span></td></tr>
+          <tr><td>Automation project: a backup script with honest test results</td><td>safebackup grew from 20 lines into a verified, privacy-aware tool with 13 passing tests.</td><td><span class="status st-done">Exceeded</span></td></tr>
+          <tr><td>Security lab project</td><td>Planned, not yet built. Its status is labelled honestly as "in progress."</td><td><span class="status st-prog">In progress</span></td></tr>
+          <tr><td>A community website project</td><td>This changed. The portfolio site itself became my web project: responsive, accessible, and tested with axe-core and a real user.</td><td><span class="status st-done">Changed</span></td></tr>
+          <tr><td>Ask a user to try each project; find an IT mentor</td><td>My nephew tested the website and classmates are reviewing it. I haven't found a mentor yet.</td><td><span class="status st-prog">Partly met</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>How my goals changed, and why</h3>
+    <p><b>From breadth to depth.</b> I planned three small projects. Once I tested my first backup script like a real user, I found it was quietly dangerous: it copied private keys, it could back a folder up into itself, and it reported success without any proof. Fixing those problems properly took most of my project time. I decided that one tool I could stand behind was worth more than three I couldn't. That choice cost me the security lab, but it taught me more about data integrity, privacy, and honest reporting than three shallow projects would have.</p>
+    <p><b>The portfolio became a project.</b> I didn't plan to treat the website as technical work. In Week 5, testing showed problems I hadn't seen: links hidden on phones, colours that failed contrast, tables you couldn't scroll with a keyboard. Fixing them turned the portfolio into evidence of the accessibility and service values I had only written about. My community-website goal didn't disappear; it moved into the site I was already building.</p>
+    <p><b>From working hard to working with others.</b> My first goals were all about what I would do. The biggest change is that I now see my main weakness: I work alone too long. My Week 2 plan already said I would ask someone to try each project and find a mentor, and those are exactly the goals I'm still behind on. That told me more than any success did. It's why my action plan now includes a mentor, a weekly "show it unfinished" habit, and a monthly service goal.</p>
+
+    <h3>What my guiding principles changed in my choices</h3>
+    <p>My three principles began as words. They became real when they cost me something. <b>Integrity</b> meant labelling the security lab "in progress" when "completed" would have looked better, and keeping version 1 of my script in the repository so anyone can see my mistakes. <b>Faith that acts</b> meant fixing problems nobody had assigned to me, like path traversal in a restore command. <b>Charity</b> meant thinking about the person whose laptop dies and who needs their files back, and the visitor who can only use a keyboard. Elder Bednar (2018) compared the gospel to strands twisted into a rope. I now understand why: separately, my faith, my skills, and my character can each hold a little; together they can hold weight for other people.</p>
+
+    <h3>What I learned from this week's resources</h3>
+    <p>Hurley (2024) taught that the Lord loves effort, because effort brings rewards that can't come any other way. That describes the safebackup rewrite exactly: the hours of testing are where I learned, not the code that came out. Elder Morrison (2024) taught that unexpected paths can become the best ones when we trust the Lord's timing. My capstone didn't follow my Week 2 plan, and I'm grateful for where it went instead. The reading on co-creating physically reminded me that a plan only matters when we act on it and stay accountable, which shaped the action plan above.</p>
+
+    <h3>How I'll use this portfolio</h3>
+    <p>I'll use this portfolio in three ways. First, as evidence in job applications: an employer can read my code, my tests, and my reasoning, not just a list of skills. Second, in interviews: each project gives me a concrete story about a problem, a decision, and a result. Third, as a living record: every three months I'll add new evidence and update each status honestly. The portfolio started as an assignment. I want it to stay a habit of doing work I'm willing to show and explain.</p>
+  </div>
+</section>
 
 <!-- ============================================================ WEEK 5 HUB -->
 <section id="week5" class="week5">
@@ -237,7 +361,8 @@ section.week5{background:var(--surface)}
     <h2>Review and reflection: Christlike attributes and warning signs</h2>
     <p>This review has two jobs. It records how Christlike attributes are showing up in my life and in this portfolio, and it names the warning sign I most need to watch. It's also the guide I'll use to finish the portfolio, so it ends with a plan.</p>
 
-    <h3>1. Christlike attributes in my life and my portfolio</h3>
+    <details class="more"><summary>Show the full review</summary>
+<h3>1. Christlike attributes in my life and my portfolio</h3>
     <p><i>Preach My Gospel</i> (2023) describes Christlike attributes as gifts from God that grow as we use our agency well, and not as personality traits we either have or don't. That helped me. I looked for evidence of each attribute instead of rating myself on how I feel about it.</p>
     <div class="tbl" tabindex="0" role="region" aria-label="Christlike attributes in my life and my portfolio table">
       <table>
@@ -309,6 +434,7 @@ section.week5{background:var(--surface)}
       <li><b>Do a final read-through</b> for APA 7 formatting, broken links, and honest status labels.</li>
     </ol>
     <p>Each step also guards against my warning sign. Steps 1 and 2 can't be done alone.</p>
+</details>
   </div>
 </section>
 
@@ -319,7 +445,8 @@ section.week5{background:var(--surface)}
     <h2>Usability testing and design enhancement report</h2>
     <p>My portfolio is meant to show employers and my instructor how I work, and it should work for everyone who visits it. That includes people on a phone, people who use a keyboard or a screen reader, and people who prefer dark mode. Treating a visitor's time and access as worth protecting is the same stewardship I try to build into my software.</p>
 
-    <h3>1. Testing questions</h3>
+    <details class="more"><summary>Show the full usability report</summary>
+<h3>1. Testing questions</h3>
     <ol>
       <li>Can a visitor find any section quickly, on both a computer and a phone?</li>
       <li>Does the site meet WCAG 2.2 level AA (World Wide Web Consortium [W3C], 2023) for contrast, keyboard use, and structure?</li>
@@ -416,7 +543,7 @@ section.week5{background:var(--surface)}
       <table>
         <thead><tr><th>Participant</th><th>Device</th><th>Tasks completed (of 5)</th><th>Ease rating (1–5)</th><th>Main comment</th><th>Change I made</th></tr></thead>
         <tbody>
-          <tr><td>P1 · my nephew</td><td>Not recorded</td><td>5 of 5 (found the video; playback not confirmed)</td><td>5</td><td>"The headings are clear, so finding things is quick. The page is very long, but the menu at the top helps."</td><td>Planned: shorten the page by moving the full source code to GitHub (finishing plan, step 4).</td></tr>
+          <tr><td>P1 · my nephew</td><td>Not recorded</td><td>5 of 5 (found the video; playback not confirmed)</td><td>5</td><td>"The headings are clear, so finding things is quick. The page is very long, but the menu at the top helps."</td><td>Done in Week 6: long sections now collapse behind a "Show" button, and the source code moved to GitHub. The page is about 36% shorter on a phone.</td></tr>
         </tbody>
       </table>
     </div>
@@ -425,6 +552,7 @@ section.week5{background:var(--surface)}
 
     <h3>7. What I learned</h3>
     <p>I assumed my site was accessible because I had chosen good fonts and colours and checked dark mode. Testing showed that the problems were in places I wasn't looking, such as a single amber colour, or a table on a phone. It's the same lesson safebackup taught me: something isn't done until it has been verified. It's also my warning sign again. The tests that matter most are the ones I can't do alone. Asking my nephew for ten minutes was a small step, but it was a step away from working alone.</p>
+</details>
   </div>
 </section>
 
@@ -576,7 +704,8 @@ section.week5{background:var(--surface)}
     <h2>Faith and learning: an expanded collection</h2>
     <p>In Week 2 I gathered seven items: D&amp;C 58:27–28, Mosiah 2:17, Luke 16:10, Ether 12:27, Nelson (2021), Johnson (2021), and a personal stewardship commitment. This week I added seven new materials and reorganised the whole collection under my three guiding principles. Each new entry has its source, what it means to me, and the professional decision it changed. Entries marked <em>Week 2</em> now include a follow-up reflection, so you can see how my understanding has changed.</p>
 
-    <h3 style="color:var(--strand1)">Strand 1 · Faith that acts</h3>
+    <details class="more"><summary>Show all 14 entries</summary>
+<h3 style="color:var(--strand1)">Strand 1 · Faith that acts</h3>
 
     <div class="entry s1">
       <span class="tag">New · Week 4</span>
@@ -657,6 +786,7 @@ section.week5{background:var(--surface)}
       <h4>In the service of your fellow beings — Mosiah 2:17</h4>
       <p><b>Follow-up.</b> I planned to ask someone to try each project. My next step is to ask a family member to try safebackup and to record anything they find confusing, so I can revise the instructions.</p>
     </div>
+</details>
   </div>
 </section>
 
@@ -831,7 +961,8 @@ section.week5{background:var(--surface)}
     <h2>Refinement report: safebackup v1 → v2</h2>
     <p><b>Project chosen:</b> the Automation and Reliability project from my Week 2 plan, a Python script that backs up a folder. I chose it because backups are central to system administration, and because a backup you can't trust is worse than none: it creates false confidence.</p>
 
-    <h3>1. Analysing version 1</h3>
+    <details class="more"><summary>Show the full refinement report</summary>
+<h3>1. Analysing version 1</h3>
     <p>Version 1 had 20 lines. It called <code>shutil.copytree</code> into a timestamped folder and printed "Backed up." I tested it the way a real user might and recorded what happened:</p>
     <div class="tbl" tabindex="0" role="region" aria-label="Analysing version 1 table"><table>
       <thead><tr><th>Test</th><th>v1 result</th><th>Category</th></tr></thead>
@@ -920,578 +1051,17 @@ snapshot_20261005_222005_054089: all 2 files match their recorded checksums.</pr
     <p>The biggest change is in the claim the tool makes. Version 1 claimed success, and version 2 proves it. For a person whose laptop dies, that's the difference between getting their files back and finding out too late that the backup was broken.</p>
 
     <h3>7. Feedback and how I responded</h3>
-    <p>A peer reviewer has not been assigned yet. When I receive feedback from my teammate and instructor, I will list each suggestion here with the change I made and why.</p>
+    <p>I didn't post this project in the Week 4 peer review discussion in time, so no classmate reviewed the code itself. That is a lesson I took into Week 6. The feedback I did receive on the portfolio, and what I changed, is in the <a href="#peer">peer review report</a>.</p>
 
     <h3>8. Source code</h3>
     <p>Repository: <a href="https://github.com/Gki12/it497-portfolio">github.com/Gki12/it497-portfolio</a></p>
-    <details><summary>safebackup.py (version 2, refined)</summary><pre tabindex="0">&quot;&quot;&quot;safebackup.py — version 2 (refined).
-
-A small, standard-library-only backup tool built for trustworthy results:
-
-  backup   Copy a folder into a timestamped snapshot with a SHA-256 manifest.
-  verify   Re-hash a snapshot and report any missing, changed, or extra files.
-  restore  Verify a snapshot, then restore it to a new or empty folder.
-  prune    Show (or, with --apply, delete) snapshots beyond a retention limit.
-
-Design principles (see REFINEMENT_REPORT.md):
-  * Honesty     - a backup is only reported as successful after it is verified.
-  * Stewardship - likely secrets are excluded unless the user explicitly opts in;
-                  logs never record file contents or the user&#x27;s home path.
-  * Safety      - snapshots are written atomically; restores never overwrite
-                  existing files or write outside the chosen folder;
-                  deletion is a dry run unless --apply is given.
-  * Clarity     - plain-language messages and documented exit codes.
-
-Author: Gaston Kasongo (IT 497). Uses only the Python standard library.
-&quot;&quot;&quot;
-from __future__ import annotations
-
-import argparse
-import fnmatch
-import hashlib
-import json
-import os
-import shutil
-import sys
-from datetime import datetime, timezone
-from pathlib import Path, PurePosixPath
-
-VERSION = &quot;2.0&quot;
-MANIFEST = &quot;manifest.json&quot;
-LOG_FILE = &quot;safebackup.log.jsonl&quot;
-SNAPSHOT_PREFIX = &quot;snapshot_&quot;
-
-# Exit codes (documented in README so scripts and schedulers can react).
-EXIT_OK = 0
-EXIT_USAGE = 2          # bad arguments, missing or invalid folders
-EXIT_VERIFY_FAILED = 3  # integrity problem detected
-EXIT_UNSAFE = 4         # refused an unsafe action (overwrite, path escape)
-EXIT_NO_SPACE = 5       # not enough free space
-
-# Files that commonly hold credentials or private keys. Excluded by default.
-SENSITIVE_PATTERNS = [
-    &quot;.env&quot;, &quot;.env.*&quot;, &quot;*.pem&quot;, &quot;*.key&quot;, &quot;*.pfx&quot;, &quot;*.p12&quot;, &quot;id_rsa&quot;, &quot;id_rsa*&quot;,
-    &quot;id_ed25519*&quot;, &quot;*.kdbx&quot;, &quot;credentials*&quot;, &quot;*secret*&quot;, &quot;.git-credentials&quot;,
-    &quot;.netrc&quot;, &quot;*.ovpn&quot;,
-]
-ALWAYS_SKIP = [MANIFEST, LOG_FILE, &quot;__pycache__&quot;, &quot;*.partial&quot;]
-
-
-class BackupError(Exception):
-    &quot;&quot;&quot;An expected failure with a plain-language message and exit code.&quot;&quot;&quot;
-
-    def __init__(self, message: str, code: int = EXIT_USAGE):
-        super().__init__(message)
-        self.code = code
-
-
-# ---------------------------------------------------------------- helpers
-def redact(path: Path | str) -&gt; str:
-    &quot;&quot;&quot;Replace the user&#x27;s home folder with &#x27;~&#x27; so logs do not expose names.&quot;&quot;&quot;
-    text = str(path)
-    home = str(Path.home())
-    return &quot;~&quot; + text[len(home):] if home and text.startswith(home) else text
-
-
-def sha256_of(path: Path, chunk: int = 1024 * 1024) -&gt; str:
-    digest = hashlib.sha256()
-    with open(path, &quot;rb&quot;) as handle:
-        for block in iter(lambda: handle.read(chunk), b&quot;&quot;):
-            digest.update(block)
-    return digest.hexdigest()
-
-
-def matches(name: str, patterns: list[str]) -&gt; bool:
-    lower = name.lower()
-    return any(fnmatch.fnmatch(lower, p.lower()) for p in patterns)
-
-
-def log_event(dest: Path, event: dict) -&gt; None:
-    &quot;&quot;&quot;Append one JSON line to the destination log (metadata only).&quot;&quot;&quot;
-    event = {&quot;time&quot;: datetime.now(timezone.utc).isoformat(timespec=&quot;seconds&quot;),
-             &quot;version&quot;: VERSION, **event}
-    with open(dest / LOG_FILE, &quot;a&quot;, encoding=&quot;utf-8&quot;) as handle:
-        handle.write(json.dumps(event) + &quot;\n&quot;)
-
-
-def say(message: str, quiet: bool = False) -&gt; None:
-    if not quiet:
-        print(message)
-
-
-def snapshots(dest: Path) -&gt; list[Path]:
-    &quot;&quot;&quot;Completed snapshots (those with a manifest), oldest first.&quot;&quot;&quot;
-    found = [p for p in dest.iterdir()
-             if p.is_dir() and p.name.startswith(SNAPSHOT_PREFIX)
-             and not p.name.endswith(&quot;.partial&quot;) and (p / MANIFEST).is_file()]
-    return sorted(found, key=lambda p: p.name)
-
-
-# ---------------------------------------------------------------- collect
-def collect(source: Path, include_sensitive: bool, extra_excludes: list[str]):
-    &quot;&quot;&quot;Walk the source without following symlinks.
-
-    Returns (files, skipped) where files is a list of relative POSIX paths and
-    skipped counts the reasons files were left out.
-    &quot;&quot;&quot;
-    files: list[str] = []
-    skipped = {&quot;sensitive&quot;: [], &quot;symlink&quot;: 0, &quot;excluded&quot;: 0, &quot;unreadable&quot;: 0}
-    patterns = list(extra_excludes)
-    for root, dirs, names in os.walk(source, followlinks=False):
-        root_path = Path(root)
-        kept_dirs = []
-        for d in dirs:
-            p = root_path / d
-            if p.is_symlink():
-                skipped[&quot;symlink&quot;] += 1
-            elif matches(d, ALWAYS_SKIP + patterns):
-                skipped[&quot;excluded&quot;] += 1
-            else:
-                kept_dirs.append(d)
-        dirs[:] = sorted(kept_dirs)
-        for name in sorted(names):
-            p = root_path / name
-            rel = p.relative_to(source).as_posix()
-            if p.is_symlink():
-                skipped[&quot;symlink&quot;] += 1
-            elif matches(name, ALWAYS_SKIP + patterns):
-                skipped[&quot;excluded&quot;] += 1
-            elif not include_sensitive and matches(name, SENSITIVE_PATTERNS):
-                skipped[&quot;sensitive&quot;].append(rel)
-            elif not os.access(p, os.R_OK):
-                skipped[&quot;unreadable&quot;] += 1
-            else:
-                files.append(rel)
-    return files, skipped
-
-
-# ---------------------------------------------------------------- commands
-def cmd_backup(args) -&gt; int:
-    source = Path(args.source).expanduser().resolve()
-    dest = Path(args.dest).expanduser().resolve()
-    if not source.is_dir():
-        raise BackupError(f&quot;The source folder was not found: {redact(source)}. &quot;
-                          &quot;Check the spelling and try again.&quot;)
-    if dest == source or source in dest.parents:
-        raise BackupError(&quot;The destination cannot be inside the source folder; &quot;
-                          &quot;the backup would copy itself.&quot;, EXIT_UNSAFE)
-    dest.mkdir(parents=True, exist_ok=True)
-
-    files, skipped = collect(source, args.include_sensitive, args.exclude or [])
-    total = sum((source / f).stat().st_size for f in files)
-    free = shutil.disk_usage(dest).free
-    if total &gt; free:
-        raise BackupError(f&quot;Not enough free space: need {total:,} bytes, &quot;
-                          f&quot;{free:,} available.&quot;, EXIT_NO_SPACE)
-
-    stamp = datetime.now().strftime(&quot;%Y%m%d_%H%M%S_%f&quot;)
-    final = dest / f&quot;{SNAPSHOT_PREFIX}{stamp}&quot;
-    partial = dest / f&quot;{final.name}.partial&quot;
-    partial.mkdir()
-    entries = []
-    try:
-        for rel in files:
-            src = source / rel
-            out = partial / PurePosixPath(rel)
-            out.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, out)
-            entries.append({&quot;path&quot;: rel, &quot;size&quot;: out.stat().st_size,
-                            &quot;sha256&quot;: sha256_of(out),
-                            &quot;source_sha256&quot;: sha256_of(src)})
-        mismatched = [e[&quot;path&quot;] for e in entries
-                      if e[&quot;sha256&quot;] != e.pop(&quot;source_sha256&quot;)]
-        if mismatched:
-            raise BackupError(&quot;Copied files did not match the originals &quot;
-                              f&quot;(possibly changed during backup): {mismatched[:5]}&quot;,
-                              EXIT_VERIFY_FAILED)
-        manifest = {&quot;tool&quot;: &quot;safebackup&quot;, &quot;version&quot;: VERSION,
-                    &quot;created&quot;: datetime.now(timezone.utc).isoformat(timespec=&quot;seconds&quot;),
-                    &quot;source&quot;: redact(source), &quot;file_count&quot;: len(entries),
-                    &quot;total_bytes&quot;: total, &quot;files&quot;: entries,
-                    &quot;skipped&quot;: {&quot;sensitive_count&quot;: len(skipped[&quot;sensitive&quot;]),
-                                &quot;symlinks&quot;: skipped[&quot;symlink&quot;],
-                                &quot;excluded&quot;: skipped[&quot;excluded&quot;],
-                                &quot;unreadable&quot;: skipped[&quot;unreadable&quot;]}}
-        (partial / MANIFEST).write_text(json.dumps(manifest, indent=2), &quot;utf-8&quot;)
-        partial.rename(final)  # atomic on the same file system
-    except BaseException:
-        shutil.rmtree(partial, ignore_errors=True)
-        raise
-
-    log_event(dest, {&quot;action&quot;: &quot;backup&quot;, &quot;result&quot;: &quot;ok&quot;, &quot;snapshot&quot;: final.name,
-                     &quot;files&quot;: len(entries), &quot;bytes&quot;: total,
-                     &quot;sensitive_skipped&quot;: len(skipped[&quot;sensitive&quot;])})
-    say(f&quot;Backup complete and verified: {len(entries)} files &quot;
-        f&quot;({total:,} bytes) saved to {final.name}.&quot;, args.quiet)
-    if skipped[&quot;sensitive&quot;]:
-        say(f&quot;Left out {len(skipped[&#x27;sensitive&#x27;])} file(s) that look like &quot;
-            &quot;passwords or keys:&quot;, args.quiet)
-        for rel in skipped[&quot;sensitive&quot;][:10]:
-            say(f&quot;  - {rel}&quot;, args.quiet)
-        say(&quot;  Store secrets in a password manager, or rerun with &quot;
-            &quot;--include-sensitive if you are sure.&quot;, args.quiet)
-    if skipped[&quot;symlink&quot;] or skipped[&quot;unreadable&quot;]:
-        say(f&quot;Also skipped {skipped[&#x27;symlink&#x27;]} shortcut(s)/symlink(s) and &quot;
-            f&quot;{skipped[&#x27;unreadable&#x27;]} unreadable file(s).&quot;, args.quiet)
-    return EXIT_OK
-
-
-def verify_snapshot(snapshot: Path) -&gt; dict:
-    manifest_path = snapshot / MANIFEST
-    if not manifest_path.is_file():
-        raise BackupError(f&quot;{snapshot.name} has no manifest; it may be &quot;
-                          &quot;incomplete or not a safebackup snapshot.&quot;,
-                          EXIT_VERIFY_FAILED)
-    manifest = json.loads(manifest_path.read_text(&quot;utf-8&quot;))
-    listed = {e[&quot;path&quot;]: e for e in manifest[&quot;files&quot;]}
-    missing, changed = [], []
-    for rel, entry in listed.items():
-        p = snapshot / PurePosixPath(rel)
-        if not p.is_file():
-            missing.append(rel)
-        elif sha256_of(p) != entry[&quot;sha256&quot;]:
-            changed.append(rel)
-    present = {p.relative_to(snapshot).as_posix()
-               for p in snapshot.rglob(&quot;*&quot;) if p.is_file()} - {MANIFEST}
-    extra = sorted(present - set(listed))
-    return {&quot;manifest&quot;: manifest, &quot;missing&quot;: missing,
-            &quot;changed&quot;: changed, &quot;extra&quot;: extra}
-
-
-def resolve_snapshot(dest: Path, name: str | None) -&gt; Path:
-    if not dest.is_dir():
-        raise BackupError(f&quot;Backup folder not found: {redact(dest)}&quot;)
-    if name in (None, &quot;latest&quot;):
-        found = snapshots(dest)
-        if not found:
-            raise BackupError(&quot;No completed snapshots were found.&quot;)
-        return found[-1]
-    snap = (dest / name).resolve()
-    if snap.parent != dest or not snap.is_dir():
-        raise BackupError(f&quot;Snapshot not found: {name}&quot;)
-    return snap
-
-
-def cmd_verify(args) -&gt; int:
-    dest = Path(args.dest).expanduser().resolve()
-    snap = resolve_snapshot(dest, args.snapshot)
-    result = verify_snapshot(snap)
-    ok = not (result[&quot;missing&quot;] or result[&quot;changed&quot;] or result[&quot;extra&quot;])
-    log_event(dest, {&quot;action&quot;: &quot;verify&quot;, &quot;snapshot&quot;: snap.name,
-                     &quot;result&quot;: &quot;ok&quot; if ok else &quot;failed&quot;,
-                     &quot;missing&quot;: len(result[&quot;missing&quot;]),
-                     &quot;changed&quot;: len(result[&quot;changed&quot;]),
-                     &quot;extra&quot;: len(result[&quot;extra&quot;])})
-    if ok:
-        say(f&quot;{snap.name}: all {result[&#x27;manifest&#x27;][&#x27;file_count&#x27;]} files &quot;
-            &quot;match their recorded checksums.&quot;, args.quiet)
-        return EXIT_OK
-    print(f&quot;{snap.name}: verification FAILED.&quot;)
-    for label in (&quot;missing&quot;, &quot;changed&quot;, &quot;extra&quot;):
-        for rel in result[label][:10]:
-            print(f&quot;  {label}: {rel}&quot;)
-    return EXIT_VERIFY_FAILED
-
-
-def cmd_restore(args) -&gt; int:
-    dest = Path(args.dest).expanduser().resolve()
-    snap = resolve_snapshot(dest, args.snapshot)
-    target = Path(args.target).expanduser().resolve()
-    result = verify_snapshot(snap)
-    if result[&quot;missing&quot;] or result[&quot;changed&quot;]:
-        raise BackupError(f&quot;{snap.name} failed verification, so nothing was &quot;
-                          &quot;restored. Run &#x27;verify&#x27; for details.&quot;, EXIT_VERIFY_FAILED)
-    if target.exists() and any(target.iterdir()) and not args.overwrite:
-        raise BackupError(&quot;The restore folder is not empty. Choose an empty &quot;
-                          &quot;folder, or add --overwrite to replace matching files.&quot;,
-                          EXIT_UNSAFE)
-    restored = 0
-    for entry in result[&quot;manifest&quot;][&quot;files&quot;]:
-        rel = PurePosixPath(entry[&quot;path&quot;])
-        out = (target / rel).resolve()
-        if rel.is_absolute() or &quot;..&quot; in rel.parts or target not in out.parents:
-            raise BackupError(f&quot;Refused unsafe path in manifest: {rel}&quot;, EXIT_UNSAFE)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(snap / rel, out)
-        if sha256_of(out) != entry[&quot;sha256&quot;]:
-            raise BackupError(f&quot;Restored copy of {rel} did not match its checksum.&quot;,
-                              EXIT_VERIFY_FAILED)
-        restored += 1
-    log_event(dest, {&quot;action&quot;: &quot;restore&quot;, &quot;snapshot&quot;: snap.name,
-                     &quot;result&quot;: &quot;ok&quot;, &quot;files&quot;: restored})
-    say(f&quot;Restored and verified {restored} files from {snap.name}.&quot;, args.quiet)
-    return EXIT_OK
-
-
-def cmd_prune(args) -&gt; int:
-    dest = Path(args.dest).expanduser().resolve()
-    if args.keep &lt; 1:
-        raise BackupError(&quot;--keep must be at least 1 so one backup always remains.&quot;)
-    found = snapshots(dest)
-    doomed = found[:-args.keep] if len(found) &gt; args.keep else []
-    if not doomed:
-        say(f&quot;Nothing to remove: {len(found)} snapshot(s), keeping {args.keep}.&quot;,
-            args.quiet)
-        return EXIT_OK
-    verb = &quot;Removing&quot; if args.apply else &quot;Would remove (dry run)&quot;
-    for snap in doomed:
-        say(f&quot;{verb}: {snap.name}&quot;, args.quiet)
-        if args.apply:
-            shutil.rmtree(snap)
-    if not args.apply:
-        say(&quot;No files were deleted. Add --apply to delete these snapshots.&quot;,
-            args.quiet)
-    log_event(dest, {&quot;action&quot;: &quot;prune&quot;, &quot;applied&quot;: args.apply,
-                     &quot;removed&quot;: len(doomed) if args.apply else 0,
-                     &quot;candidates&quot;: len(doomed)})
-    return EXIT_OK
-
-
-# ---------------------------------------------------------------- CLI
-def build_parser() -&gt; argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        prog=&quot;safebackup&quot;,
-        description=&quot;Verified, privacy-aware folder backups.&quot;)
-    parser.add_argument(&quot;--version&quot;, action=&quot;version&quot;, version=VERSION)
-    parser.add_argument(&quot;-q&quot;, &quot;--quiet&quot;, action=&quot;store_true&quot;,
-                        help=&quot;only print errors&quot;)
-    sub = parser.add_subparsers(dest=&quot;command&quot;, required=True)
-
-    b = sub.add_parser(&quot;backup&quot;, help=&quot;create a verified snapshot&quot;)
-    b.add_argument(&quot;source&quot;), b.add_argument(&quot;dest&quot;)
-    b.add_argument(&quot;--exclude&quot;, action=&quot;append&quot;, metavar=&quot;PATTERN&quot;,
-                   help=&quot;extra file/folder pattern to skip (repeatable)&quot;)
-    b.add_argument(&quot;--include-sensitive&quot;, action=&quot;store_true&quot;,
-                   help=&quot;also copy files that look like passwords or keys&quot;)
-    b.set_defaults(func=cmd_backup)
-
-    v = sub.add_parser(&quot;verify&quot;, help=&quot;check a snapshot against its manifest&quot;)
-    v.add_argument(&quot;dest&quot;), v.add_argument(&quot;--snapshot&quot;, default=&quot;latest&quot;)
-    v.set_defaults(func=cmd_verify)
-
-    r = sub.add_parser(&quot;restore&quot;, help=&quot;restore a verified snapshot&quot;)
-    r.add_argument(&quot;dest&quot;), r.add_argument(&quot;target&quot;)
-    r.add_argument(&quot;--snapshot&quot;, default=&quot;latest&quot;)
-    r.add_argument(&quot;--overwrite&quot;, action=&quot;store_true&quot;,
-                   help=&quot;allow restoring into a non-empty folder&quot;)
-    r.set_defaults(func=cmd_restore)
-
-    p = sub.add_parser(&quot;prune&quot;, help=&quot;apply a retention limit&quot;)
-    p.add_argument(&quot;dest&quot;), p.add_argument(&quot;--keep&quot;, type=int, default=7)
-    p.add_argument(&quot;--apply&quot;, action=&quot;store_true&quot;,
-                   help=&quot;actually delete (default is a dry run)&quot;)
-    p.set_defaults(func=cmd_prune)
-    return parser
-
-
-def main(argv: list[str] | None = None) -&gt; int:
-    args = build_parser().parse_args(argv)
-    try:
-        return args.func(args)
-    except BackupError as err:
-        print(f&quot;Error: {err}&quot;, file=sys.stderr)
-        return err.code
-    except PermissionError as err:
-        print(f&quot;Error: permission denied for {redact(err.filename or &#x27;&#x27;)}.&quot;,
-              file=sys.stderr)
-        return EXIT_USAGE
-
-
-if __name__ == &quot;__main__&quot;:
-    sys.exit(main())
-</pre></details>
-    <details><summary>test_safebackup.py (13 tests)</summary><pre tabindex="0">&quot;&quot;&quot;Tests for safebackup v2. Run with:  python -m unittest -v test_safebackup
-All test data is fictional and created in temporary folders.&quot;&quot;&quot;
-import hashlib
-import io
-import json
-import os
-import tempfile
-import unittest
-from contextlib import redirect_stderr, redirect_stdout
-from pathlib import Path
-
-import safebackup as sb
-
-
-def run(*argv):
-    out, err = io.StringIO(), io.StringIO()
-    with redirect_stdout(out), redirect_stderr(err):
-        code = sb.main(list(argv))
-    return code, out.getvalue(), err.getvalue()
-
-
-class SafeBackupTests(unittest.TestCase):
-    def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
-        base = Path(self.tmp.name)
-        self.src, self.dest = base / &quot;src&quot;, base / &quot;backups&quot;
-        (self.src / &quot;docs&quot;).mkdir(parents=True)
-        (self.src / &quot;docs&quot; / &quot;notes.txt&quot;).write_text(&quot;fictional meeting notes&quot;)
-        (self.src / &quot;report.csv&quot;).write_text(&quot;id,value\n1,42\n&quot;)
-        (self.src / &quot;.env&quot;).write_text(&quot;API_KEY=not-a-real-key&quot;)
-        (self.src / &quot;server.pem&quot;).write_text(&quot;-----FAKE KEY-----&quot;)
-
-    def tearDown(self):
-        self.tmp.cleanup()
-
-    def latest(self):
-        return sb.snapshots(self.dest)[-1]
-
-    # 1. Successful backup creates a verified snapshot with a manifest.
-    def test_backup_success(self):
-        code, out, _ = run(&quot;backup&quot;, str(self.src), str(self.dest))
-        self.assertEqual(code, sb.EXIT_OK)
-        self.assertIn(&quot;verified&quot;, out)
-        manifest = json.loads((self.latest() / sb.MANIFEST).read_text())
-        self.assertEqual(manifest[&quot;file_count&quot;], 2)
-        data = (self.latest() / &quot;report.csv&quot;).read_bytes()
-        entry = next(e for e in manifest[&quot;files&quot;] if e[&quot;path&quot;] == &quot;report.csv&quot;)
-        self.assertEqual(entry[&quot;sha256&quot;], hashlib.sha256(data).hexdigest())
-
-    # 2. Missing source gives a clear message and usage exit code.
-    def test_missing_source(self):
-        code, _, err = run(&quot;backup&quot;, str(self.src / &quot;nope&quot;), str(self.dest))
-        self.assertEqual(code, sb.EXIT_USAGE)
-        self.assertIn(&quot;source folder was not found&quot;, err)
-
-    # 3. Secrets are excluded by default and reported by name only.
-    def test_sensitive_excluded_by_default(self):
-        _, out, _ = run(&quot;backup&quot;, str(self.src), str(self.dest))
-        self.assertFalse((self.latest() / &quot;.env&quot;).exists())
-        self.assertFalse((self.latest() / &quot;server.pem&quot;).exists())
-        self.assertIn(&quot;look like passwords or keys&quot;, out)
-        self.assertNotIn(&quot;not-a-real-key&quot;, out)
-
-    # 4. Explicit opt-in includes them.
-    def test_sensitive_opt_in(self):
-        run(&quot;backup&quot;, str(self.src), str(self.dest), &quot;--include-sensitive&quot;)
-        self.assertTrue((self.latest() / &quot;.env&quot;).exists())
-
-    # 5. Restore round-trip produces identical files.
-    def test_restore_round_trip(self):
-        run(&quot;backup&quot;, str(self.src), str(self.dest))
-        target = Path(self.tmp.name) / &quot;restored&quot;
-        code, out, _ = run(&quot;restore&quot;, str(self.dest), str(target))
-        self.assertEqual(code, sb.EXIT_OK)
-        self.assertEqual((target / &quot;docs&quot; / &quot;notes.txt&quot;).read_text(),
-                         &quot;fictional meeting notes&quot;)
-
-    # 6. Tampering is detected and blocks restore.
-    def test_tamper_detected(self):
-        run(&quot;backup&quot;, str(self.src), str(self.dest))
-        (self.latest() / &quot;report.csv&quot;).write_text(&quot;id,value\n1,999\n&quot;)
-        code, out, _ = run(&quot;verify&quot;, str(self.dest))
-        self.assertEqual(code, sb.EXIT_VERIFY_FAILED)
-        self.assertIn(&quot;changed: report.csv&quot;, out)
-        code, _, err = run(&quot;restore&quot;, str(self.dest),
-                           str(Path(self.tmp.name) / &quot;r2&quot;))
-        self.assertEqual(code, sb.EXIT_VERIFY_FAILED)
-
-    # 7. Restore refuses to overwrite a non-empty folder.
-    def test_restore_no_overwrite(self):
-        run(&quot;backup&quot;, str(self.src), str(self.dest))
-        target = Path(self.tmp.name) / &quot;busy&quot;
-        target.mkdir()
-        (target / &quot;keep.txt&quot;).write_text(&quot;important&quot;)
-        code, _, err = run(&quot;restore&quot;, str(self.dest), str(target))
-        self.assertEqual(code, sb.EXIT_UNSAFE)
-        self.assertEqual((target / &quot;keep.txt&quot;).read_text(), &quot;important&quot;)
-
-    # 8. A manifest path that escapes the restore folder is refused.
-    def test_path_traversal_refused(self):
-        run(&quot;backup&quot;, str(self.src), str(self.dest))
-        snap = self.latest()
-        evil = self.dest / &quot;evil.txt&quot;
-        evil.write_text(&quot;x&quot;)
-        manifest = json.loads((snap / sb.MANIFEST).read_text())
-        manifest[&quot;files&quot;].append({&quot;path&quot;: &quot;../evil.txt&quot;, &quot;size&quot;: 1,
-                                  &quot;sha256&quot;: hashlib.sha256(b&quot;x&quot;).hexdigest()})
-        (snap / sb.MANIFEST).write_text(json.dumps(manifest))
-        target = Path(self.tmp.name) / &quot;r3&quot;
-        code, _, err = run(&quot;restore&quot;, str(self.dest), str(target))
-        self.assertEqual(code, sb.EXIT_UNSAFE)
-        self.assertFalse((Path(self.tmp.name) / &quot;evil.txt&quot;).exists())
-
-    # 9. Prune is a dry run unless --apply is given.
-    def test_prune_dry_run_then_apply(self):
-        for _ in range(3):
-            run(&quot;backup&quot;, str(self.src), str(self.dest))
-        _, out, _ = run(&quot;prune&quot;, str(self.dest), &quot;--keep&quot;, &quot;1&quot;)
-        self.assertIn(&quot;No files were deleted&quot;, out)
-        self.assertEqual(len(sb.snapshots(self.dest)), 3)
-        run(&quot;prune&quot;, str(self.dest), &quot;--keep&quot;, &quot;1&quot;, &quot;--apply&quot;)
-        self.assertEqual(len(sb.snapshots(self.dest)), 1)
-
-    # 10. Logs contain metadata only: no file contents, no home path.
-    def test_log_privacy(self):
-        run(&quot;backup&quot;, str(self.src), str(self.dest))
-        log = (self.dest / sb.LOG_FILE).read_text()
-        self.assertNotIn(&quot;not-a-real-key&quot;, log)
-        self.assertNotIn(&quot;fictional meeting notes&quot;, log)
-        self.assertNotIn(&quot;.env&quot;, log)
-
-    # 11. Destination inside source is refused.
-    def test_dest_inside_source(self):
-        code, _, err = run(&quot;backup&quot;, str(self.src), str(self.src / &quot;bk&quot;))
-        self.assertEqual(code, sb.EXIT_UNSAFE)
-
-    # 12. Symlinks are skipped, not followed.
-    @unittest.skipIf(os.name == &quot;nt&quot;, &quot;symlinks need admin rights on Windows&quot;)
-    def test_symlink_skipped(self):
-        outside = Path(self.tmp.name) / &quot;outside.txt&quot;
-        outside.write_text(&quot;should not be copied&quot;)
-        (self.src / &quot;link.txt&quot;).symlink_to(outside)
-        run(&quot;backup&quot;, str(self.src), str(self.dest))
-        self.assertFalse((self.latest() / &quot;link.txt&quot;).exists())
-
-    # 13. No half-finished snapshot is left behind after a failure.
-    def test_no_partial_left_on_failure(self):
-        original = sb.sha256_of
-        calls = {&quot;n&quot;: 0}
-
-        def flaky(path, chunk=1024 * 1024):
-            calls[&quot;n&quot;] += 1
-            if calls[&quot;n&quot;] == 3:
-                raise OSError(&quot;simulated disk error&quot;)
-            return original(path, chunk)
-
-        sb.sha256_of = flaky
-        try:
-            with self.assertRaises(OSError):
-                run(&quot;backup&quot;, str(self.src), str(self.dest))
-        finally:
-            sb.sha256_of = original
-        leftovers = [p for p in self.dest.iterdir() if p.is_dir()]
-        self.assertEqual(leftovers, [])
-
-
-if __name__ == &quot;__main__&quot;:
-    unittest.main(verbosity=2)
-</pre></details>
-    <details><summary>v1_backup.py (baseline, kept for comparison)</summary><pre tabindex="0">&quot;&quot;&quot;backup.py — version 1 (baseline, Week 2 plan).
-
-Copies a source folder into a timestamped folder under a destination.
-Kept unchanged in the repository so the refinements in v2 can be compared.
-Known weaknesses are documented in REFINEMENT_REPORT.md.
-&quot;&quot;&quot;
-import shutil
-import sys
-from datetime import datetime
-
-
-def main():
-    source = sys.argv[1]
-    dest = sys.argv[2]
-    stamp = datetime.now().strftime(&quot;%Y%m%d_%H%M%S&quot;)
-    target = f&quot;{dest}/backup_{stamp}&quot;
-    shutil.copytree(source, target)
-    print(f&quot;Backed up {source} to {target}&quot;)
-
-
-if __name__ == &quot;__main__&quot;:
-    main()
-</pre></details>
+    <p>To keep this page shorter (the main suggestion from my usability test), the full code now lives on GitHub:</p>
+    <ul>
+      <li><a href="https://github.com/Gki12/it497-portfolio/blob/main/safebackup/safebackup.py">safebackup.py</a> (version 2, refined)</li>
+      <li><a href="https://github.com/Gki12/it497-portfolio/blob/main/safebackup/test_safebackup.py">test_safebackup.py</a> (13 tests)</li>
+      <li><a href="https://github.com/Gki12/it497-portfolio/blob/main/safebackup/v1_backup.py">v1_backup.py</a> (baseline, kept for comparison)</li>
+      <li><a href="https://github.com/Gki12/it497-portfolio/blob/main/safebackup/README.md">README</a> (usage, exit codes, known limitations)</li>
+    </ul>
 
     <h3>9. Next steps</h3>
     <ul>
@@ -1499,58 +1069,51 @@ if __name__ == &quot;__main__&quot;:
       <li>Incremental snapshots, using hard links for unchanged files, to save space.</li>
       <li>A scheduled-task guide for Windows Task Scheduler and cron.</li>
     </ul>
+</details>
   </div>
 </section>
 
 <!-- ============================================================ PEER -->
 <section id="peer">
   <div class="wrap">
-    <div class="eyebrow">Week 4 · Task 4 · Peer review</div>
-    <h2>Peer review evaluation</h2>
-    <p><span class="status st-prog">Waiting for assignment</span></p>
-    <p><b>Reviewer:</b> Gaston Kasongo · <b>Teammate:</b> To be assigned · <b>Project reviewed:</b> To be assigned</p>
-    <p>I haven't been assigned a teammate for this review yet. I prepared the review framework ahead of time so I can give a thorough, fair evaluation as soon as one is assigned. It looks at the two areas the course emphasises, technical skill and ethical integration. Every rating must be backed by something specific I observed and paired with a suggestion the teammate can act on.</p>
+    <div class="eyebrow">Week 6 · Portfolio peer reviews</div>
+    <h2>Peer review report</h2>
+    <p>I posted my portfolio in the class peer review discussion and reviewed two classmates' portfolios. I chose two that nobody had reviewed yet, so that both would receive feedback. For each review, I followed the course pattern: what works, a connection, ideas for improvement, and a question.</p>
 
-    <h3>Rating scale</h3>
-    <div class="tbl" tabindex="0" role="region" aria-label="Rating scale table"><table>
-      <thead><tr><th class="num">Rating</th><th>Meaning</th></tr></thead>
-      <tbody>
-        <tr><td class="num">4 · Exemplary</td><td>Thoroughly addressed. I could not find a meaningful gap after testing it.</td></tr>
-        <tr><td class="num">3 · Proficient</td><td>Works and is mostly addressed. Minor gaps that don't harm users.</td></tr>
-        <tr><td class="num">2 · Developing</td><td>Partly addressed. Gaps that could confuse or harm some users.</td></tr>
-        <tr><td class="num">1 · Beginning</td><td>Missing, or not working when tested.</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3>Evaluation</h3>
-    <p class="src">The "What I check" column is the method I'll use. The last two columns are filled in during the review.</p>
-    <div class="tbl" tabindex="0" role="region" aria-label="Evaluation table"><table>
-      <thead><tr><th>Criterion</th><th>What I check</th><th class="num">Rating</th><th>Evidence and suggestion</th></tr></thead>
-      <tbody>
-        <tr><td colspan="4"><b>Technical skills</b></td></tr>
-        <tr><td><b>Functionality</b></td><td>Run the main task the way a new user would. Does it do what the documentation says?</td><td class="num">—</td><td>—</td></tr>
-        <tr><td><b>Complexity of challenges addressed</b></td><td>Did the refinement tackle hard problems (scale, security, reliability) or only cosmetic ones?</td><td class="num">—</td><td>—</td></tr>
-        <tr><td><b>Code quality</b></td><td>Readable names, small functions, no duplicated logic, and comments that explain why.</td><td class="num">—</td><td>—</td></tr>
-        <tr><td><b>Reliability and testing</b></td><td>Try empty input, wrong input, and a missing file or network. Are there tests? Do errors explain how to fix the problem?</td><td class="num">—</td><td>—</td></tr>
-        <tr><td><b>Security</b></td><td>No passwords or keys in the code or repository. Input is validated. Least privilege is used.</td><td class="num">—</td><td>—</td></tr>
-        <tr><td colspan="4"><b>Ethical integration</b></td></tr>
-        <tr><td><b>Data privacy and consent</b></td><td>What personal data is collected, stored, or logged? Is all of it needed? Are users told and asked?</td><td class="num">—</td><td>—</td></tr>
-        <tr><td><b>Accessibility and fairness</b></td><td>Keyboard-only use, contrast, alt text, and plain language. Does it work equally well for every intended user?</td><td class="num">—</td><td>—</td></tr>
-        <tr><td><b>Societal impact</b></td><td>Who could be harmed if it fails silently or is misused? Is that risk acknowledged and reduced?</td><td class="num">—</td><td>—</td></tr>
-        <tr><td><b>Documentation of decisions</b></td><td>Are the changes, the reasons for them, and their impact clearly recorded?</td><td class="num">—</td><td>—</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3>Summary for my teammate</h3>
+    <h3>Review 1: Sonny Klutsey</h3>
     <dl class="facts">
-      <dt>Strengths</dt><dd>Two strengths, each tied to something I tested or read.</dd>
-      <dt>Top priority</dt><dd>The one change that would most improve the project, why it matters to users, and a concrete first step.</dd>
-      <dt>Other suggestions</dt><dd>Up to three smaller improvements, ordered by impact.</dd>
-      <dt>Encouragement</dt><dd>One sentence about the growth I can see in their work.</dd>
+      <dt>What works</dt><dd>His Digital Skills Workshop is a strong, concrete example of service. His ethical dilemma about an administrator misusing privileges is realistic, and he weighs two options fairly.</dd>
+      <dt>Connection</dt><dd>We share the same career goal and the same rope idea from Elder Bednar. His dilemma connects to least privilege and to my choice to keep personal details out of safebackup's logs.</dd>
+      <dt>Suggestions</dt><dd>Open the home page with a summary instead of a weekly log; remove duplicated skills and typos from the résumé; take his phone number off the public site; ask an outside person to test the site.</dd>
+      <dt>Question</dt><dd>What did he change in his teaching after seeing workshop participants struggle?</dd>
     </dl>
 
-    <h3>How I give feedback</h3>
-    <p>I follow Proverbs 3:5–6 and Mosiah 2:17 in how I review. I listen to the project first, test before I judge, and write feedback I'd want to receive: specific, kind, and useful. I review the work, not the person.</p>
+    <h3>Review 2: Kurtiss Johnson</h3>
+    <dl class="facts">
+      <dt>What works</dt><dd>A very professional portfolio with real work experience, each project paired with a principle, and an excellent real-world dilemma about locking a departing employee's personal laptop.</dd>
+      <dt>Connection</dt><dd>His idea that integrity means "owning the cost of a hard choice" matches what I learned from the Equifax case.</dd>
+      <dt>Suggestions</dt><dd>Finish an incomplete sentence on his Spiritual Foundations page; correct two résumé typos; add target dates for his certifications; add screenshots or slides as evidence for his Azure build.</dd>
+      <dt>Question</dt><dd>What did the company finally decide about the laptop, and would he handle it differently now?</dd>
+    </dl>
+
+    <h3>Feedback I received</h3>
+    <p class="todo-block"><b>To complete:</b> Summarize each classmate's feedback on my portfolio here (who, what they suggested), and the change I made for each suggestion.</p>
+    <p>Before the class reviews, my nephew tested the site (see the <a href="#usability">usability report</a>). His one difficulty was that the page is very long. I acted on it this week. The four longest sections (the faith collection, the Week 5 review, the usability report, and the IT refinement report) now open with a short summary and a "Show" button for the full text. On a phone, the page went from about 68,800 to about 43,900 pixels tall, roughly 36% shorter. The full source code of safebackup now lives on GitHub, and a portfolio map at the top lets visitors jump straight to either portfolio.</p>
+
+    <h3>What I learned from reviewing</h3>
+    <p>Giving feedback taught me as much as receiving it. When I suggested that Sonny ask an outside person to test his site, I realised I was describing my own warning sign. When I noticed an unfinished sentence in Kurtiss's portfolio, I reread mine for the same problem. The Lord gave feedback at every stage of the Creation: "it was good" (Genesis 1:4). I want my feedback to be specific, kind, and useful, and I want to receive feedback the same way, as a help and not an attack.</p>
+  </div>
+</section>
+
+<!-- ============================================================ PRESENTATION -->
+<section id="presentation">
+  <div class="wrap">
+    <div class="eyebrow">Week 6 · Presentation and course evaluation</div>
+    <h2>Presentation</h2>
+    <p>I prepared a 12-slide PowerPoint presentation of both portfolios for my teacher. I'll also use it for the roundtable discussion in Week 7. It follows the same story as this page: where I started, the three strands, my main project, what changed, and where I'm going.</p>
+    <p><a href="IT497_Kasongo_Portfolio_Presentation.pptx" download><b>Download the presentation (PowerPoint)</b></a></p>
+    <h3>Course evaluation</h3>
+    <p class="todo-block"><b>To complete:</b> Course evaluation completed on [date].</p>
   </div>
 </section>
 
@@ -1595,15 +1158,18 @@ if __name__ == &quot;__main__&quot;:
     <p>Bednar, D. A. (2018, November). Gather together in one all things in Christ. <i>Ensign</i> or <i>Liahona</i>. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/general-conference/2018/10/gather-together-in-one-all-things-in-christ?lang=eng</p>
     <p><i>The Book of Mormon</i>. (n.d.). The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng</p>
     <p><i>Doctrine and Covenants</i>. (n.d.). The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/scriptures/dc-testament?lang=eng</p>
+    <p>Co-create physically and be accountable. (n.d.). In <i>Leadership toolkit</i>. BYU-Idaho EdTech Books. https://books.byui.edu/leadership_toolkit/create_physically</p>
     <p>Deque Systems. (2025). <i>axe-core</i> (Version 4.14) [Computer software]. GitHub. https://github.com/dequelabs/axe-core</p>
     <p>Ensign College. (n.d.). <i>Embracing differences and overcoming contention</i> [Course resource]. IT 497: IT Capstone.</p>
     <p>Equifax. (2017, September 15). <i>Equifax releases details on cybersecurity incident, announces personnel changes</i>. https://investor.equifax.com/news-events/press-releases/detail/237/equifax-releases-details-on-cybersecurity-incident</p>
     <p>Federal Trade Commission. (2019, July 22). <i>Equifax to pay $575 million as part of settlement with FTC, CFPB, and states related to 2017 data breach</i>. https://www.ftc.gov/news-events/news/press-releases/2019/07/equifax-pay-575-million-part-settlement-ftc-cfpb-states-related-2017-data-breach</p>
     <p>Holland, J. R. (2015, February 6). <i>Be not afraid, only believe</i> [Address to CES religious educators]. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/broadcasts/article/evening-with-a-general-authority/2015/02/helping-with-the-real-issues?lang=eng</p>
+    <p>Hurley, C. (2024, February 20). <i>Climbing your own Mount Sinai: The rewards of faith and effort</i> [Devotional]. Ensign College. https://speeches.ensign.edu/devotional/casey-hurley-02-2024</p>
     <p>Johnson, C. N. (2021, October). <i>Invite Christ to author your story</i>. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/general-conference/2021/10/42johnson?lang=eng</p>
     <p><i>King James Bible</i>. (n.d.). The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/scriptures/bible?lang=eng</p>
     <p>Kusch, B. C., &amp; Kusch, A. (2024, January 9). <i>I tell you these things that ye may understand</i> [Devotional]. Ensign College. https://speeches.ensign.edu/devotional/president-bruce-c-kusch-and-sister-alynda-kusch-01-2023</p>
     <p>Marriott, N. F. (n.d.). <i>Stand in truth</i> [Video]. YouTube. https://www.youtube.com/watch?v=ATzkKB7OAjo</p>
+    <p>Morrison, I. K. (2024, March 12). <i>Lessons from the unexpected path</i> [Devotional]. Ensign College. https://speeches.ensign.edu/devotional/elder-isaac-k-morrison-03-2024</p>
     <p>Nelson, R. M. (2021, October). <i>Make time for the Lord</i>. The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/general-conference/2021/10/59nelson?lang=eng</p>
     <p>Nielsen, J. (2024, January 30). <i>10 usability heuristics for user interface design</i>. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/</p>
     <p><i>Preach my gospel: A guide to sharing the gospel of Jesus Christ</i>. (2023). The Church of Jesus Christ of Latter-day Saints. https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-2023?lang=eng</p>
@@ -1616,7 +1182,7 @@ if __name__ == &quot;__main__&quot;:
 </main>
 <button type="button" class="to-top" id="toTop" aria-label="Back to top">↑ Top</button>
 <footer>
-  <div class="wrap">Gaston Kasongo · IT 497 Capstone · Week 5 · October 2026. Project examples use fictional data. Scripture quotations are from editions published by The Church of Jesus Christ of Latter-day Saints.</div>
+  <div class="wrap">Gaston Kasongo · IT 497 Capstone · Final portfolio · October 2026. Project examples use fictional data. Scripture quotations are from editions published by The Church of Jesus Christ of Latter-day Saints.</div>
 </footer>
 
 
@@ -1636,7 +1202,7 @@ if __name__ == &quot;__main__&quot;:
   // Highlight current section in the nav
   var links = Array.prototype.slice.call(document.querySelectorAll('nav.bar a'));
   var map = {}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
-  var groups = {review:'week5', usability:'week5', 'ethics-reflection':'week5', 'mental-map':'week5'};
+  var groups = {review:'week5', usability:'week5', 'ethics-reflection':'week5', 'mental-map':'week5', 'action-plan':'week6', essay:'week6', presentation:'week6'};
   var current = null;
   function setCurrent(id){
     var a = map[id] || map[groups[id]]; if (!a || a === current) return;
@@ -1651,6 +1217,8 @@ if __name__ == &quot;__main__&quot;:
     }, {rootMargin:'-30% 0px -65% 0px'});
     document.querySelectorAll('header.hero, main section[id]').forEach(function(el){ io.observe(el); });
   }
+  function openFor(h){ var el=h&&document.getElementById(h.slice(1)); var d=el&&el.closest('details'); if(d) d.open=true; }
+  openFor(location.hash); window.addEventListener('hashchange',function(){openFor(location.hash);});
   // Back to top
   var tt = document.getElementById('toTop');
   window.addEventListener('scroll', function(){ tt.classList.toggle('show', window.scrollY > 900); }, {passive:true});
